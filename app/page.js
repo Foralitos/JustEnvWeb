@@ -35,7 +35,7 @@ export default function Page() {
             </svg>
           </a>
 
-          <Link href="/blog" className="link link-hover text-sm">
+          <Link href="/blog" className="no-underline hover:underline text-sm">
             Fancy a blog?
           </Link>
         </section>

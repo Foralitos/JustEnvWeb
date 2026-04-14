@@ -301,7 +301,7 @@ const VideoTestimonial = ({ i }) => {
                 <p className="text-gray-50 font-medium drop-shadow">
                   {testimonial.name}
                 </p>
-                <div className="rating">
+                <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

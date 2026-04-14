@@ -6,7 +6,7 @@ const Testimonial1Small = () => {
   return (
     <section className="bg-base-100">
       <div className="space-y-6 md:space-y-8 max-w-lg mx-auto px-8 py-16 md:py-32 ">
-        <div className="rating !flex justify-center">
+        <div className="flex justify-center gap-0.5">
           {[...Array(5)].map((_, i) => (
             <svg
               xmlns="http://www.w3.org/2000/svg"

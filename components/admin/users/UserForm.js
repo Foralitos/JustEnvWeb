@@ -41,8 +41,7 @@ export default function UserForm({
       ...prev,
       [name]: value
     }));
-    
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -74,7 +73,7 @@ export default function UserForm({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -85,14 +84,14 @@ export default function UserForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
-        <div className="alert alert-error">
+        <div className="flex items-center gap-2 p-4 rounded-lg bg-error/10 text-error border border-error/20">
           <span>{error}</span>
         </div>
       )}
 
-      <div className="form-control w-full">
-        <label className="label">
-          <span className="label-text">
+      <div className="w-full">
+        <label className="py-1 block">
+          <span className="text-sm font-medium">
             Name <span className="text-red-500">*</span>
           </span>
         </label>
@@ -102,18 +101,20 @@ export default function UserForm({
           value={formData.name}
           onChange={handleChange}
           placeholder="Enter full name"
-          className={`input input-bordered w-full ${errors.name ? 'input-error' : ''}`}
+          className={`w-full px-3 py-2 text-sm border rounded-lg bg-base-100 focus:outline-none focus:ring-2 focus:border-primary ${
+            errors.name
+              ? "border-error focus:ring-error/50"
+              : "border-base-content/20 focus:ring-primary/50"
+          }`}
         />
         {errors.name && (
-          <label className="label">
-            <span className="label-text-alt text-red-500">{errors.name}</span>
-          </label>
+          <p className="text-xs text-red-500 mt-1">{errors.name}</p>
         )}
       </div>
 
-      <div className="form-control w-full">
-        <label className="label">
-          <span className="label-text">
+      <div className="w-full">
+        <label className="py-1 block">
+          <span className="text-sm font-medium">
             Email <span className="text-red-500">*</span>
           </span>
         </label>
@@ -124,18 +125,20 @@ export default function UserForm({
           onChange={handleChange}
           placeholder="Enter email address"
           disabled={mode === "edit"}
-          className={`input input-bordered w-full ${errors.email ? 'input-error' : ''} ${mode === "edit" ? 'input-disabled' : ''}`}
+          className={`w-full px-3 py-2 text-sm border rounded-lg bg-base-100 focus:outline-none focus:ring-2 focus:border-primary ${
+            errors.email
+              ? "border-error focus:ring-error/50"
+              : "border-base-content/20 focus:ring-primary/50"
+          } ${mode === "edit" ? "opacity-50 cursor-not-allowed bg-base-200" : ""}`}
         />
         {errors.email && (
-          <label className="label">
-            <span className="label-text-alt text-red-500">{errors.email}</span>
-          </label>
+          <p className="text-xs text-red-500 mt-1">{errors.email}</p>
         )}
       </div>
 
-      <div className="form-control w-full">
-        <label className="label">
-          <span className="label-text">
+      <div className="w-full">
+        <label className="py-1 block">
+          <span className="text-sm font-medium">
             Role <span className="text-red-500">*</span>
           </span>
         </label>
@@ -143,7 +146,11 @@ export default function UserForm({
           name="role"
           value={formData.role}
           onChange={handleChange}
-          className={`select select-bordered w-full ${errors.role ? 'select-error' : ''}`}
+          className={`w-full px-3 py-2 text-sm border rounded-lg bg-base-100 focus:outline-none focus:ring-2 focus:border-primary ${
+            errors.role
+              ? "border-error focus:ring-error/50"
+              : "border-base-content/20 focus:ring-primary/50"
+          }`}
         >
           {roleOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -152,9 +159,7 @@ export default function UserForm({
           ))}
         </select>
         {errors.role && (
-          <label className="label">
-            <span className="label-text-alt text-red-500">{errors.role}</span>
-          </label>
+          <p className="text-xs text-red-500 mt-1">{errors.role}</p>
         )}
       </div>
 
@@ -173,7 +178,7 @@ export default function UserForm({
             mode === "create" ? "Create User" : "Update User"
           )}
         </button>
-        
+
         <button
           type="button"
           className="btn btn-ghost"

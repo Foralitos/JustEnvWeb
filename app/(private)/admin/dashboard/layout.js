@@ -21,16 +21,20 @@ export default async function LayoutAdminPrivate({ children }) {
   }
 
   return (
-    <div className="drawer lg:drawer-open">
-      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        {/* Page content here */}
+    <div className="flex min-h-screen">
+      {/* Hidden checkbox — controls sidebar open/close on mobile */}
+      <input id="my-drawer-2" type="checkbox" className="peer hidden" />
+
+      {/* Sidebar renders as a fragment: overlay + aside are direct siblings of the input */}
+      <Sidebar />
+
+      {/* Main content */}
+      <div className="flex-1 min-w-0">
         <div className="p-4">
           <MobileHeader />
           {children}
         </div>
       </div>
-      <Sidebar />
     </div>
   );
 }

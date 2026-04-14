@@ -92,7 +92,7 @@ const Header = () => {
             <Link
               href={link.href}
               key={link.href}
-              className="link link-hover"
+              className="no-underline hover:underline"
               title={link.label}
             >
               {link.label}
@@ -158,7 +158,7 @@ const Header = () => {
                   <Link
                     href={link.href}
                     key={link.href}
-                    className="link link-hover"
+                    className="no-underline hover:underline"
                     title={link.label}
                   >
                     {link.label}
@@ -166,7 +166,7 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            <div className="divider"></div>
+            <div className="border-t border-base-content/10 my-4"></div>
             {/* Your CTA on small screens */}
             <div className="flex flex-col">{cta}</div>
           </div>

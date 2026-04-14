@@ -26,8 +26,8 @@ export default function Dashboard() {
     <div className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto space-y-8"></div>
       {/* Stats Section */}
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
+      <div className="rounded-lg bg-base-100 shadow-xl">
+        <div className="p-6 flex flex-col gap-2">
           <div className="topsection pb-4">
             <h1 className="text-3xl font-bold">
               Welcome to your Admin Dashboard 🚀

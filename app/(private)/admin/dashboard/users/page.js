@@ -77,8 +77,8 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto space-y-8">
-        <div className="card bg-base-100 shadow-xl">
-          <div className="card-body">
+        <div className="rounded-lg bg-base-100 shadow-xl">
+          <div className="p-6 flex flex-col gap-2">
             <div className="flex justify-between items-center pb-4">
               <div>
                 <h1 className="text-3xl font-bold">User Management 👥</h1>
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </div>
 
             {error && (
-              <div className="alert alert-error mb-4">
+              <div className="flex items-center gap-2 p-4 mb-4 rounded-lg bg-error/10 text-error border border-error/20">
                 <span>{error}</span>
               </div>
             )}

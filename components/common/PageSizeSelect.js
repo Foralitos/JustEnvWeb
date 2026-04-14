@@ -9,9 +9,9 @@ const PAGE_SIZE_OPTIONS = [
 
 export default function PageSizeSelect({ value, onChange }) {
   return (
-    <div className="form-control">
+    <div>
       <select
-        className="select select-bordered"
+        className="px-3 py-2 text-sm border border-base-content/20 rounded-lg bg-base-100 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
         value={value || "10"}
         onChange={(e) => onChange(e.target.value)}
       >

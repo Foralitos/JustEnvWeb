@@ -200,7 +200,7 @@ export const articles = [
           <h3 className={styles.h3}>1. Create a supabase account</h3>
           <p className={styles.p}>
             First, go to{" "}
-            <a href="https://supabase.com/" className="link link-primary">
+            <a href="https://supabase.com/" className="text-primary no-underline hover:underline">
               Supabase
             </a>{" "}
             and create an account. It&apos;s free for up to 10,000 rows per

@@ -10,7 +10,7 @@ export default function MobileHeader() {
 
   return (
     <div className="flex justify-between items-center mb-4 lg:hidden">
-      <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button">
+      <label htmlFor="my-drawer-2" className="btn btn-primary cursor-pointer">
         Open Menu
       </label>
 

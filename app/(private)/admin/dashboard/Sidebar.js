@@ -31,16 +31,29 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="drawer-side">
-      <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-      <div className="w-64 h-screen bg-base-200 text-base-content flex flex-col">
-        {/* Main menu items */}
-        <ul className="menu p-4 flex-1">
+    <>
+      {/* Mobile overlay — click to close sidebar */}
+      <label
+        htmlFor="my-drawer-2"
+        className="fixed inset-0 z-30 bg-black/50 hidden peer-checked:block lg:hidden cursor-pointer"
+      />
+
+      {/* Sidebar panel */}
+      <aside className="fixed inset-y-0 left-0 z-40 w-64 flex flex-col bg-base-200 text-base-content -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0">
+        {/* Main nav items */}
+        <ul className="flex flex-col gap-1 p-4 flex-1">
           {sidebarOptions.map((option) => {
             const isActive = pathname === option.href;
             return (
               <li key={option.href}>
-                <Link href={option.href} className={isActive ? "active" : ""}>
+                <Link
+                  href={option.href}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-150 ${
+                    isActive
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "hover:bg-base-300"
+                  }`}
+                >
                   <option.icon className="w-5 h-5" />
                   {option.label}
                 </Link>
@@ -49,19 +62,17 @@ export default function Sidebar() {
           })}
         </ul>
 
-        {/* Logout button - only visible on desktop */}
-        <ul className="menu p-4 pt-0 hidden lg:block">
-          <li>
-            <button
-              onClick={handleLogout}
-              className="text-error hover:bg-error/20"
-            >
-              <ArrowLeftOnRectangleIcon className="w-5 h-5" />
-              Logout
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
+        {/* Logout button — desktop only */}
+        <div className="p-4 pt-0 hidden lg:block">
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg w-full text-error hover:bg-error/20 transition-colors"
+          >
+            <ArrowLeftOnRectangleIcon className="w-5 h-5" />
+            Logout
+          </button>
+        </div>
+      </aside>
+    </>
   );
 }

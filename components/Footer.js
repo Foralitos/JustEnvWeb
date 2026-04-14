@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
           <div className="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+              <div className="font-semibold text-base-content tracking-widest text-sm md:text-left mb-3 uppercase">
                 LINKS
               </div>
 
@@ -74,34 +74,34 @@ const Footer = () => {
                   <a
                     href={`mailto:${config.resend.supportEmail}`}
                     target="_blank"
-                    className="link link-hover"
+                    className="no-underline hover:underline"
                     aria-label="Contact Support"
                   >
                     Support
                   </a>
                 )}
-                <Link href="/#pricing" className="link link-hover">
+                <Link href="/#pricing" className="no-underline hover:underline">
                   Pricing
                 </Link>
-                <Link href="/blog" className="link link-hover">
+                <Link href="/blog" className="no-underline hover:underline">
                   Blog
                 </Link>
-                <a href="/#" target="_blank" className="link link-hover">
+                <a href="/#" target="_blank" className="no-underline hover:underline">
                   Affiliates
                 </a>
               </div>
             </div>
 
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+              <div className="font-semibold text-base-content tracking-widest text-sm md:text-left mb-3 uppercase">
                 LEGAL
               </div>
 
               <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <Link href="/tos" className="link link-hover">
+                <Link href="/tos" className="no-underline hover:underline">
                   Terms of services
                 </Link>
-                <Link href="/privacy-policy" className="link link-hover">
+                <Link href="/privacy-policy" className="no-underline hover:underline">
                   Privacy policy
                 </Link>
               </div>

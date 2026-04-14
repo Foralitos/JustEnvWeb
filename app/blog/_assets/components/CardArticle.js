@@ -13,11 +13,11 @@ const CardArticle = ({
   const TitleTag = tag;
 
   return (
-    <article className="card bg-base-200 rounded-box overflow-hidden">
+    <article className="flex flex-col bg-base-200 rounded-box overflow-hidden">
       {article.image?.src && (
         <Link
           href={`/blog/${article.slug}`}
-          className="link link-hover hover:link-primary"
+          className="no-underline hover:underline hover:text-primary"
           title={article.title}
           rel="bookmark"
         >
@@ -34,7 +34,7 @@ const CardArticle = ({
           </figure>
         </Link>
       )}
-      <div className="card-body">
+      <div className="p-6 flex flex-col gap-2">
         {/* CATEGORIES */}
         {showCategory && (
           <div className="flex flex-wrap gap-2">
@@ -48,7 +48,7 @@ const CardArticle = ({
         <TitleTag className="mb-1 text-xl md:text-2xl font-bold">
           <Link
             href={`/blog/${article.slug}`}
-            className="link link-hover hover:link-primary"
+            className="no-underline hover:underline hover:text-primary"
             title={article.title}
             rel="bookmark"
           >

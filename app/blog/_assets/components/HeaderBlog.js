@@ -27,7 +27,7 @@ const ButtonPopoverCategories = () => {
       {({ open }) => (
         <>
           <Popover.Button
-            className="link no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
+            className="no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
             title="Open Blog categories"
           >
             Categories
@@ -56,7 +56,7 @@ const ButtonPopoverCategories = () => {
           >
             <Popover.Panel className="absolute left-0 z-30 mt-3 w-screen max-w-full sm:max-w-sm transform">
               {({ close }) => (
-                <div className="overflow-hidden rounded-box shadow-lg ring-1 ring-base-content ring-opacity-5">
+                <div className="overflow-hidden rounded-box shadow-lg ring-1 ring-base-content/5">
                   <div className="relative grid gap-2 bg-base-100 p-2 overflow-hidden">
                     {categories.map((category) => (
                       <div key={category.slug} onClick={() => close()}>
@@ -99,7 +99,7 @@ const ButtonAccordionCategories = () => {
         }}
         aria-expanded={isOpen}
         type="button"
-        className="link no-underline flex justify-between items-center w-full "
+        className="no-underline flex justify-between items-center w-full "
       >
         Categories
         <svg
@@ -124,7 +124,7 @@ const ButtonAccordionCategories = () => {
             <li key={category.slug}>
               <Link
                 href={`/blog/category/${category.slug}`}
-                className="text-base-content/80 hover:text-base-content duration-100 link link-hover"
+                className="text-base-content/80 hover:text-base-content duration-100 no-underline hover:underline"
               >
                 {category?.titleShort || category.title}
               </Link>
@@ -200,7 +200,7 @@ const HeaderBlog = () => {
             <Link
               href={link.href}
               key={link.href}
-              className="link link-hover text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
+              className="no-underline text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
               title={link.label}
             >
               {link.label}
@@ -268,7 +268,7 @@ const HeaderBlog = () => {
                   <Link
                     href={link.href}
                     key={link.href}
-                    className="link link-hover"
+                    className="no-underline hover:underline"
                     title={link.label}
                   >
                     {link.label}
@@ -277,7 +277,7 @@ const HeaderBlog = () => {
                 <ButtonAccordionCategories />
               </div>
             </div>
-            <div className="divider"></div>
+            <div className="border-t border-base-content/10 my-4"></div>
             {/* Your CTA on small screens */}
             <div className="flex flex-col">{cta}</div>
           </div>
