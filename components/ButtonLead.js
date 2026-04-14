@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { toast } from "react-hot-toast";
+import { sileo } from "sileo";
 import apiClient from "@/libs/api";
 
 // This component is used to collect the emails from the landing page
@@ -21,7 +21,7 @@ const ButtonLead = ({ extraStyle }) => {
     try {
       await apiClient.post("/lead", { email });
 
-      toast.success("Thanks for joining the waitlist!");
+      sileo.success({ title: "Thanks for joining the waitlist!" });
 
       // just remove the focus on the input
       inputRef.current.blur();

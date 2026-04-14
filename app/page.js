@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ButtonSignin from "@/components/ButtonSignin";
 import ThemeToggle from "@/components/ThemeToggle";
+import ButtonToastTest from "@/components/ButtonToastTest";
 
 export default function Page() {
   return (
@@ -40,6 +41,8 @@ export default function Page() {
           <Link href="/blog" className="no-underline hover:underline text-sm">
             Fancy a blog?
           </Link>
+
+          <ButtonToastTest />
         </section>
       </main>
     </>

@@ -6,7 +6,8 @@ import { useSession } from "next-auth/react";
 import { Crisp } from "crisp-sdk-web";
 import { SessionProvider } from "next-auth/react";
 import NextTopLoader from "nextjs-toploader";
-import { Toaster } from "react-hot-toast";
+import { useTheme } from "next-themes";
+import { Toaster } from "sileo";
 import { Tooltip } from "react-tooltip";
 import config from "@/config";
 import { ThemeProvider } from "@/libs/ThemeProvider";
@@ -49,9 +50,15 @@ const CrispChat = () => {
 // All the client wrappers are here (they can't be in server components)
 // 1. SessionProvider: Allow the useSession from next-auth (find out if user is auth or not)
 // 2. NextTopLoader: Show a progress bar at the top when navigating between pages
-// 3. Toaster: Show Success/Error messages anywhere from the app with toast()
+// 3. Toaster: Show Success/Error messages anywhere from the app with sileo()
 // 4. Tooltip: Show tooltips if any JSX elements has these 2 attributes: data-tooltip-id="tooltip" data-tooltip-content=""
 // 5. CrispChat: Set Crisp customer chat support (see above)
+// Reads current theme and passes it to sileo Toaster so toasts match light/dark mode
+const ThemedToaster = () => {
+  const { resolvedTheme } = useTheme();
+  return <Toaster position="top-right" theme={resolvedTheme === "dark" ? "light" : "dark"} options={{ duration: 3000 }} />;
+};
+
 const ClientLayout = ({ children }) => {
   return (
     <ThemeProvider>
@@ -62,12 +69,8 @@ const ClientLayout = ({ children }) => {
         {/* Content inside app/page.js files  */}
         {children}
 
-        {/* Show Success/Error messages anywhere from the app with toast() */}
-        <Toaster
-          toastOptions={{
-            duration: 3000,
-          }}
-        />
+        {/* Show Success/Error messages anywhere from the app with sileo() — theme-aware */}
+        <ThemedToaster />
 
         {/* Show tooltips if any JSX elements has these 2 attributes: data-tooltip-id="tooltip" data-tooltip-content="" */}
         <Tooltip

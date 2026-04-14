@@ -1,5 +1,5 @@
 import axios from "axios";
-import { toast } from "react-hot-toast";
+import { sileo } from "sileo";
 import { signIn } from "next-auth/react";
 import config from "@/config";
 
@@ -18,7 +18,7 @@ apiClient.interceptors.response.use(
 
     if (error.response?.status === 401) {
       // User not auth, ask to re login
-      toast.error("Please login");
+      sileo.error({ title: "Please login" });
       // automatically redirect to /dashboard page after login
       return signIn(undefined, { callbackUrl: config.auth.callbackUrl });
     } else if (error.response?.status === 403) {
@@ -36,9 +36,9 @@ apiClient.interceptors.response.use(
 
     // Automatically display errors to the user
     if (error.message) {
-      toast.error(error.message);
+      sileo.error({ title: error.message });
     } else {
-      toast.error("something went wrong...");
+      sileo.error({ title: "something went wrong..." });
     }
     return Promise.reject(error);
   }
