@@ -80,6 +80,44 @@
   }
 }
 
+/* ── Dark mode color overrides ──────────────────────────────────────────── */
+
+.dark {
+  --color-base-100: oklch(15% 0.01 260);
+  --color-base-200: oklch(20% 0.01 260);
+  --color-base-300: oklch(25% 0.01 260);
+  --color-base-content: oklch(90% 0.008 260);
+
+  --color-neutral: oklch(80% 0.008 260);
+  --color-neutral-content: oklch(20% 0.01 260);
+}
+
+/* ── View Transitions API — theme change animation ──────────────────────── */
+
+::view-transition-group(root) {
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
+  mask-origin: content-box;
+  animation: vt-scale 1s;
+  animation-fill-mode: both;
+  transform-origin: top left;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: vt-scale 1s;
+  animation-fill-mode: both;
+  transform-origin: top left;
+  z-index: -1;
+}
+
+@keyframes vt-scale {
+  to { mask-size: 350vmax; }
+}
+
 html,
 body {
   scroll-behavior: smooth !important;

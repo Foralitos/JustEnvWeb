@@ -1,10 +1,12 @@
 import Link from "next/link";
 import ButtonSignin from "@/components/ButtonSignin";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Page() {
   return (
     <>
-      <header className="p-4 flex justify-end max-w-7xl mx-auto">
+      <header className="p-4 flex justify-end items-center gap-2 max-w-7xl mx-auto">
+        <ThemeToggle />
         <ButtonSignin text="Login" />
       </header>
       <main>

@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // Admin sidebar navigation options
 const sidebarOptions = [
@@ -62,8 +63,12 @@ export default function Sidebar() {
           })}
         </ul>
 
-        {/* Logout button — desktop only */}
-        <div className="p-4 pt-0 hidden lg:block">
+        {/* Theme toggle + Logout — desktop only */}
+        <div className="p-4 pt-0 hidden lg:flex lg:flex-col lg:gap-1">
+          <div className="flex items-center gap-2 px-4 py-2">
+            <ThemeToggle />
+            <span className="text-sm text-base-content/60">Toggle theme</span>
+          </div>
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 px-4 py-2 rounded-lg w-full text-error hover:bg-error/20 transition-colors"
