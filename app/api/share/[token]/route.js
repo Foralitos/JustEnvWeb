@@ -38,7 +38,7 @@ export async function GET(req, { params }) {
   let result;
   try {
     result = await redis.eval(LUA_CONSUME_SHARE, [SHARE_KEY_PREFIX + token], []);
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "storage_failed" }, { status: 500, headers: NO_STORE });
   }
 

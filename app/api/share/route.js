@@ -73,7 +73,7 @@ export async function POST(req) {
     });
     pipe.expire(key, ttlSec);
     await pipe.exec();
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "storage_failed" }, { status: 500 });
   }
 

@@ -70,7 +70,7 @@ export default function SharePage({ params }) {
       let res;
       try {
         res = await fetch(`/api/share/${token}`, { cache: "no-store" });
-      } catch (e) {
+      } catch {
         if (!cancelled) {
           setError({ kind: "network", message: "Could not reach the share server." });
           setState(STATE.ERROR);
@@ -126,7 +126,7 @@ export default function SharePage({ params }) {
         });
         setSecondsLeft(Number(data.ttl));
         setState(STATE.READY);
-      } catch (e) {
+      } catch {
         if (!cancelled) {
           setError({
             kind: "decrypt",
@@ -168,7 +168,9 @@ export default function SharePage({ params }) {
       await navigator.clipboard.writeText(dotenv);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
-    } catch {}
+    } catch {
+      // Clipboard API can fail without document focus or permission; best-effort.
+    }
   };
 
   if (state === STATE.LOADING) {
