@@ -1,10 +1,18 @@
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { getSEOTags } from "@/libs/seo";
 import ClientLayout from "@/components/LayoutClient";
 import config from "@/config";
 import "./globals.css";
 
-const font = Inter({ subsets: ["latin"] });
+const sans = Geist({ subsets: ["latin"], variable: "--ds-font-sans", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--ds-font-mono", display: "swap" });
+const display = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--ds-font-display",
+  display: "swap",
+});
 
 export const viewport = {
 	// Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
@@ -21,7 +29,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html
 			lang="en"
-			className={font.className}
+			className={`${sans.variable} ${mono.variable} ${display.variable} ${sans.className}`}
 			suppressHydrationWarning
 		>
 			<body>

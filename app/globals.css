@@ -123,8 +123,264 @@ body {
   scroll-behavior: smooth !important;
 }
 
+body {
+  background: var(--bg-base);
+  color: var(--fg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
 progress::-webkit-progress-value {
   transition: 0.6s width ease-out;
+}
+
+/* ============================================================
+   justenv — Design Tokens (LIGHT theme defaults)
+   Dark overrides live under `.dark` selector below.
+   ============================================================ */
+:root {
+  /* Surfaces — light theme */
+  --bg-base:      #F8F9FA;
+  --bg-raised:    #FFFFFF;
+  --bg-surface:   #FFFFFF;
+  --bg-overlay:   #FFFFFF;
+  --bg-inset:     #EEF0F2;
+
+  /* Foreground */
+  --fg-primary:   #0E1013;
+  --fg-secondary: #5E6671;
+  --fg-tertiary:  #8A929B;
+  --fg-quaternary:#C7CDD3;
+
+  /* Borders */
+  --border-subtle:  rgba(0, 0, 0, 0.06);
+  --border-default: rgba(0, 0, 0, 0.10);
+  --border-strong:  rgba(0, 0, 0, 0.16);
+  --border-accent:  rgba(56, 224, 138, 0.40);
+
+  /* Accent — signal green (same in both themes) */
+  --accent:        #38E08A;
+  --accent-hover:  #57E8A0;
+  --accent-press:  #28C075;
+  --accent-fg:     #041710;
+  --accent-muted:  #1C3A2C;
+  --accent-glow:   rgba(56, 224, 138, 0.22);
+  --accent-soft:   rgba(56, 224, 138, 0.10);
+
+  /* Semantic */
+  --success:   #38E08A;
+  --success-fg:#041710;
+  --warning:   #F5C453;
+  --warning-fg:#1F1804;
+  --danger:    #F2555A;
+  --danger-fg: #1F0607;
+  --info:      #5BA8F5;
+  --info-fg:   #04101F;
+
+  /* Glass — light: dark translucent fill, white inset highlight */
+  --glass-fill:        rgba(0, 0, 0, 0.04);
+  --glass-fill-hover:  rgba(0, 0, 0, 0.07);
+  --glass-fill-press:  rgba(0, 0, 0, 0.02);
+  --glass-border:      rgba(0, 0, 0, 0.10);
+  --glass-highlight:   rgba(255, 255, 255, 0.80);
+  --glass-blur:        24px;
+  --glass-saturate:    170%;
+
+  /* Typography families — populated by next/font in layout.js */
+  --ds-font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --ds-font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --ds-font-mono: "Geist Mono", ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  /* Aliases the components reference: */
+  --font-sans: var(--ds-font-sans);
+  --font-display: var(--ds-font-display);
+  --font-mono: var(--ds-font-mono);
+
+  /* TYPE SCALE */
+  --text-display-2xl: 72px;  --lh-display-2xl: 1.05;  --ls-display-2xl: -0.018em;
+  --text-display-xl:  56px;  --lh-display-xl:  1.07;  --ls-display-xl:  -0.016em;
+  --text-display-lg:  44px;  --lh-display-lg:  1.09;  --ls-display-lg:  -0.014em;
+  --text-h1:          34px;  --lh-h1:          1.12;  --ls-h1:          -0.022em;
+  --text-h2:          26px;  --lh-h2:          1.18;  --ls-h2:          -0.018em;
+  --text-h3:          20px;  --lh-h3:          1.30;  --ls-h3:          -0.012em;
+  --text-body-lg:     18px;  --lh-body-lg:     1.55;  --ls-body-lg:     -0.006em;
+  --text-body:        15px;  --lh-body:        1.60;  --ls-body:        -0.004em;
+  --text-body-sm:     13px;  --lh-body-sm:     1.55;  --ls-body-sm:      0em;
+  --text-caption:     12px;  --lh-caption:     1.40;  --ls-caption:      0.005em;
+  --text-overline:    11px;  --lh-overline:    1.20;  --ls-overline:     0.14em;
+  --text-mono:        13.5px;--lh-mono:        1.55;  --ls-mono:         0em;
+
+  /* WEIGHTS */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;
+
+  /* SPACING — 4px base */
+  --space-0: 0px;     --space-1: 4px;    --space-2: 8px;    --space-3: 12px;
+  --space-4: 16px;    --space-5: 20px;   --space-6: 24px;   --space-8: 32px;
+  --space-10: 40px;   --space-12: 48px;  --space-16: 64px;  --space-20: 80px;
+  --space-24: 96px;   --space-32: 128px;
+
+  /* RADII */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-full: 999px;
+
+  /* ELEVATION */
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.10);
+  --elev-2: 0 8px 24px -8px rgba(0, 0, 0, 0.18);
+  --elev-3: 0 24px 64px -16px rgba(0, 0, 0, 0.25);
+  --elev-glow: 0 0 0 1px var(--border-accent), 0 8px 40px -8px var(--accent-glow);
+
+  /* MOTION */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+
+  /* GRID BACKGROUND */
+  --grid-line: rgba(0, 0, 0, 0.045);
+  --grid-size: 56px;
+}
+
+/* Dark theme overrides — applied by next-themes via `.dark` on <html> */
+:root.dark,
+.dark {
+  --bg-base:      #08090B;
+  --bg-raised:    #0E1013;
+  --bg-surface:   #14171B;
+  --bg-overlay:   #1A1E23;
+  --bg-inset:     #050608;
+
+  --fg-primary:   #F3F5F6;
+  --fg-secondary: #9CA3AD;
+  --fg-tertiary:  #5E6671;
+  --fg-quaternary:#3A4048;
+
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong:  rgba(255, 255, 255, 0.16);
+  --border-accent:  rgba(56, 224, 138, 0.40);
+
+  --glass-fill:        rgba(255, 255, 255, 0.07);
+  --glass-fill-hover:  rgba(255, 255, 255, 0.12);
+  --glass-fill-press:  rgba(255, 255, 255, 0.05);
+  --glass-border:      rgba(255, 255, 255, 0.18);
+  --glass-highlight:   rgba(255, 255, 255, 0.30);
+
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --elev-2: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
+  --elev-3: 0 24px 64px -16px rgba(0, 0, 0, 0.70);
+
+  --grid-line: rgba(255, 255, 255, 0.045);
+}
+
+/* ============================================================
+   justenv — Semantic type utility classes
+   ============================================================ */
+.ds-display-2xl {
+  font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-optical-sizing: auto;
+  font-size: var(--text-display-2xl); line-height: var(--lh-display-2xl);
+  letter-spacing: var(--ls-display-2xl); color: var(--fg-primary);
+}
+.ds-display-xl {
+  font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-optical-sizing: auto;
+  font-size: var(--text-display-xl); line-height: var(--lh-display-xl);
+  letter-spacing: var(--ls-display-xl); color: var(--fg-primary);
+}
+.ds-display-lg {
+  font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-optical-sizing: auto;
+  font-size: var(--text-display-lg); line-height: var(--lh-display-lg);
+  letter-spacing: var(--ls-display-lg); color: var(--fg-primary);
+}
+.ds-h1 {
+  font-family: var(--font-sans); font-weight: var(--weight-semibold);
+  font-size: var(--text-h1); line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1); color: var(--fg-primary);
+}
+.ds-h2 {
+  font-family: var(--font-sans); font-weight: var(--weight-semibold);
+  font-size: var(--text-h2); line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2); color: var(--fg-primary);
+}
+.ds-h3 {
+  font-family: var(--font-sans); font-weight: var(--weight-medium);
+  font-size: var(--text-h3); line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3); color: var(--fg-primary);
+}
+.ds-body-lg {
+  font-family: var(--font-sans); font-weight: var(--weight-regular);
+  font-size: var(--text-body-lg); line-height: var(--lh-body-lg);
+  letter-spacing: var(--ls-body-lg); color: var(--fg-secondary);
+}
+.ds-body {
+  font-family: var(--font-sans); font-weight: var(--weight-regular);
+  font-size: var(--text-body); line-height: var(--lh-body);
+  letter-spacing: var(--ls-body); color: var(--fg-secondary);
+}
+.ds-body-sm {
+  font-family: var(--font-sans); font-weight: var(--weight-regular);
+  font-size: var(--text-body-sm); line-height: var(--lh-body-sm);
+  letter-spacing: var(--ls-body-sm); color: var(--fg-secondary);
+}
+.ds-caption {
+  font-family: var(--font-sans); font-weight: var(--weight-regular);
+  font-size: var(--text-caption); line-height: var(--lh-caption);
+  letter-spacing: var(--ls-caption); color: var(--fg-tertiary);
+}
+.ds-overline {
+  font-family: var(--font-mono); font-weight: var(--weight-medium);
+  font-size: var(--text-overline); line-height: var(--lh-overline);
+  letter-spacing: var(--ls-overline); text-transform: uppercase;
+  color: var(--fg-tertiary);
+}
+.ds-mono {
+  font-family: var(--font-mono); font-weight: var(--weight-regular);
+  font-size: var(--text-mono); line-height: var(--lh-mono);
+  letter-spacing: var(--ls-mono); color: var(--fg-secondary);
+}
+
+/* Reusable patterns */
+.ds-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 40%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.ds-glass {
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+          backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight),
+              inset 0 0 0 1px rgba(255,255,255,0.02),
+              var(--elev-2);
+}
+
+/* Marquee animations (used by ToolsCarousel) */
+@keyframes marquee-l {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-r {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 /* ── Component classes (DaisyUI replacements) ──────────────────────────── */
