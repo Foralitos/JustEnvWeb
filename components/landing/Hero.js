@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon, Logo, Button, Brand, GridBG } from "./lib";
+import ThemeToggle from "./ThemeToggle";
 
 function EnvPreview() {
   const [env, setEnv] = useState("production");
@@ -240,106 +241,6 @@ function BrandMark() {
   );
 }
 
-function PromoCard() {
-  const [hover, setHover] = useState(false);
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 22,
-        padding: "16px 16px 16px 24px",
-        borderRadius: "var(--radius-2xl)",
-        background:
-          "linear-gradient(135deg, rgba(56,224,138,0.10), rgba(56,224,138,0.03))",
-        border: "1px solid var(--border-accent)",
-        backdropFilter: "blur(28px) saturate(170%)",
-        WebkitBackdropFilter: "blur(28px) saturate(170%)",
-        boxShadow:
-          "inset 0 1px 0 0 var(--glass-highlight), var(--elev-2), 0 0 60px -28px var(--accent-glow)",
-      }}
-    >
-      <div>
-        <div
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 14,
-            color: "var(--fg-secondary)",
-            lineHeight: 1.35,
-          }}
-        >
-          Introducing
-        </div>
-        <div
-          style={{
-            fontFamily: "var(--font-display)",
-            fontStyle: "italic",
-            fontSize: 22,
-            color: "var(--fg-primary)",
-            lineHeight: 1.2,
-            letterSpacing: "-0.01em",
-          }}
-        >
-          Team&nbsp;sync
-        </div>
-      </div>
-      <button
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        style={{
-          position: "relative",
-          width: 124,
-          height: 70,
-          flexShrink: 0,
-          cursor: "pointer",
-          borderRadius: "var(--radius-lg)",
-          overflow: "hidden",
-          border: "1px solid var(--border-strong)",
-          background:
-            "repeating-linear-gradient(135deg, rgba(56,224,138,0.16) 0 2px, transparent 2px 9px), var(--bg-inset)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 0,
-          transition: "transform var(--dur-fast) var(--ease-out)",
-          transform: hover ? "scale(1.03)" : "none",
-        }}
-      >
-        <span
-          style={{
-            width: 34,
-            height: 34,
-            borderRadius: "var(--radius-full)",
-            background: "var(--glass-fill)",
-            border: "1px solid var(--glass-border)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "var(--fg-primary)",
-          }}
-        >
-          <Icon name="play" size={15} style={{ marginLeft: 2 }} />
-        </span>
-        <span
-          style={{
-            position: "absolute",
-            bottom: 5,
-            left: 7,
-            fontFamily: "var(--font-mono)",
-            fontSize: 9,
-            color: "var(--fg-tertiary)",
-            letterSpacing: "0.04em",
-          }}
-        >
-          watch demo
-        </span>
-      </button>
-    </div>
-  );
-}
-
 function BigWord({ children }) {
   return (
     <span
@@ -352,7 +253,7 @@ function BigWord({ children }) {
         fontFamily: "var(--font-display)",
         fontWeight: 500,
         fontStyle: "normal",
-        fontSize: "min(340px, 27vw)",
+        fontSize: "min(440px, 34vw)",
         lineHeight: 1,
         letterSpacing: "-0.04em",
         whiteSpace: "nowrap",
@@ -365,7 +266,7 @@ function BigWord({ children }) {
         backgroundClip: "text",
         color: "transparent",
         filter: "drop-shadow(0 18px 50px rgba(0,0,0,0.30))",
-        opacity: 0.85,
+        opacity: 0.95,
       }}
     >
       {children}
@@ -427,21 +328,20 @@ export default function Hero({ onSignup }) {
           flexDirection: "column",
         }}
       >
-        <div style={{ paddingTop: 8 }}>
-          <BrandMark />
-        </div>
-
         <div
           style={{
+            paddingTop: 8,
             display: "flex",
-            alignItems: "flex-start",
+            alignItems: "center",
             justifyContent: "space-between",
-            gap: 48,
-            flexWrap: "wrap",
-            marginTop: 44,
+            gap: 12,
           }}
         >
-          <div style={{ maxWidth: 620, flex: "1 1 480px" }}>
+          <BrandMark />
+          <ThemeToggle />
+        </div>
+
+        <div style={{ maxWidth: 620, marginTop: 44 }}>
             <h1 className="ds-display-xl" style={{ margin: 0, fontSize: 60 }}>
               Your environment variables,
               <br />
@@ -478,16 +378,18 @@ export default function Hero({ onSignup }) {
                 flexWrap: "wrap",
               }}
             >
-              <Button variant="accent" size="lg" onClick={onSignup}>
+              <Button
+                variant="accent"
+                size="lg"
+                onClick={onSignup}
+                style={{ padding: "15px 28px", fontSize: 16 }}
+              >
                 <Brand
                   name="apple"
-                  size={18}
+                  size={19}
                   style={{ marginRight: 3, marginTop: -2 }}
                 />
                 Download for Mac
-              </Button>
-              <Button variant="glass" size="lg" iconLeft="book-open">
-                Read the docs
               </Button>
             </div>
             <p
@@ -501,10 +403,6 @@ export default function Hero({ onSignup }) {
             >
               Free for solo developers · macOS 13 or later
             </p>
-          </div>
-          <div style={{ flex: "0 1 auto" }}>
-            <PromoCard />
-          </div>
         </div>
 
         <div
@@ -512,7 +410,7 @@ export default function Hero({ onSignup }) {
           style={{
             position: "relative",
             flex: 1,
-            minHeight: 440,
+            minHeight: 480,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

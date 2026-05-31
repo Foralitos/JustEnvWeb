@@ -1,148 +1,284 @@
 "use client";
 
-import { Logo, Button, Brand, GridBG } from "./lib";
+import { useState } from "react";
+import { Button, Brand, Logo } from "./lib";
 
-export default function Footer({ onSignup }) {
-  const cols = [
-    { h: "Product", items: ["Overview", "How it works", "Changelog", "Status"] },
-    {
-      h: "Developers",
-      items: ["Docs", "Integrations", "Security", "Roadmap", "Open source"],
-    },
-    { h: "Company", items: ["About", "Blog", "Careers", "Security", "Contact"] },
-  ];
+const STAGE_BG = "#1C3A2C";
+const BAR_FG_DIM = "rgba(255,255,255,0.55)";
+const BAR_FG_BRIGHT = "rgba(255,255,255,0.92)";
+const BAR_BORDER = "rgba(255,255,255,0.10)";
+
+function FooterDevice({ onDownload }) {
   return (
-    <footer
+    <div
       style={{
         position: "relative",
-        borderTop: "1px solid var(--border-subtle)",
-        overflow: "hidden",
+        zIndex: 1,
+        width: "min(520px, calc(100% - 48px))",
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "minmax(0, 1.05fr) minmax(0, 0.95fr)",
+        background: "rgba(0,0,0,0.28)",
+        backdropFilter: "blur(28px) saturate(170%)",
+        WebkitBackdropFilter: "blur(28px) saturate(170%)",
+        border: "1px solid rgba(255,255,255,0.12)",
+        borderRadius: 24,
+        padding: 14,
+        gap: 14,
+        boxShadow:
+          "0 30px 80px -20px rgba(0,0,0,0.55), inset 0 1px 0 0 rgba(255,255,255,0.14)",
       }}
     >
-      <div style={{ position: "relative", padding: "96px 0", overflow: "hidden" }}>
-        <GridBG fade="radial-gradient(ellipse 60% 120% at 50% 50%, #000 20%, transparent 100%)" />
-        <div
-          style={{
-            position: "relative",
-            maxWidth: 720,
-            margin: "0 auto",
-            padding: "0 32px",
-            textAlign: "center",
-          }}
-        >
-          <h2 className="ds-display-lg" style={{ margin: 0 }}>
-            Keep your secrets where they belong.
-          </h2>
-          <p
-            className="ds-body-lg"
-            style={{ margin: "16px auto 32px", maxWidth: 460 }}
-          >
-            Download the Mac app, store your team&apos;s secrets, and stop sharing them
-            in unsafe places. Free for solo developers.
-          </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-            <Button variant="accent" size="lg" onClick={onSignup}>
-              <Brand
-                name="apple"
-                size={18}
-                style={{ marginRight: 3, marginTop: -2 }}
-              />
-              Download for Mac
-            </Button>
-          </div>
-        </div>
-      </div>
+      {/* Left: app-icon-as-texture (the justenv mark centered, soft halo) */}
       <div
         style={{
-          borderTop: "1px solid var(--border-subtle)",
-          padding: "56px 0 40px",
+          position: "relative",
+          background: "rgba(0,0,0,0.45)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: 14,
+          padding: 16,
+          minHeight: 152,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+        }}
+      >
+        {/* soft green halo behind the icon */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(56,224,138,0.22), transparent 65%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div style={{ position: "relative", transform: "scale(1.05)" }}>
+          <Logo size={44} showWord={false} />
+        </div>
+      </div>
+
+      {/* Right: screen with CTA */}
+      <div
+        style={{
+          background: "rgba(0,0,0,0.55)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: 14,
+          padding: "14px 16px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          minHeight: 152,
         }}
       >
         <div
           style={{
-            maxWidth: 1120,
-            margin: "0 auto",
-            padding: "0 32px",
-            display: "grid",
-            gridTemplateColumns: "1.6fr repeat(3, 1fr)",
-            gap: 32,
+            fontFamily: "var(--font-mono)",
+            fontSize: 10,
+            letterSpacing: "0.14em",
+            color: "rgba(255,255,255,0.45)",
+            textTransform: "uppercase",
           }}
         >
-          <div>
-            <Logo size={22} />
-            <p
-              className="ds-body-sm"
-              style={{ margin: "16px 0 0", maxWidth: 240 }}
-            >
-              The secure home for your environment variables.
-            </p>
-          </div>
-          {cols.map((c) => (
-            <div key={c.h}>
-              <h4
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: "var(--fg-primary)",
-                  margin: "0 0 14px",
-                }}
-              >
-                {c.h}
-              </h4>
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: 10 }}
-              >
-                {c.items.map((it) => (
-                  <a
-                    key={it}
-                    href="#"
-                    style={{
-                      fontFamily: "var(--font-sans)",
-                      fontSize: 13,
-                      color: "var(--fg-tertiary)",
-                      textDecoration: "none",
-                      transition: "color var(--dur-fast)",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "var(--fg-primary)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "var(--fg-tertiary)")
-                    }
-                  >
-                    {it}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+          Ready
         </div>
+        <Button
+          variant="accent"
+          size="md"
+          onClick={onDownload}
+          style={{
+            width: "100%",
+            justifyContent: "center",
+            padding: "11px 14px",
+            fontSize: 14,
+          }}
+        >
+          <Brand
+            name="apple"
+            size={16}
+            style={{ marginRight: 3, marginTop: -2 }}
+          />
+          Download
+        </Button>
         <div
           style={{
-            maxWidth: 1120,
-            margin: "40px auto 0",
-            padding: "24px 32px 0",
-            borderTop: "1px solid var(--border-subtle)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            fontFamily: "var(--font-mono)",
+            fontSize: 10,
+            color: "rgba(255,255,255,0.40)",
+            textAlign: "center",
           }}
         >
-          <span className="ds-caption">© 2026 justenv, Inc. All rights reserved.</span>
-          <div style={{ display: "flex", gap: 16 }}>
-            <a
-              href="#"
-              style={{ color: "var(--fg-tertiary)", display: "inline-flex" }}
-            >
-              <Brand name="github" size={17} />
-            </a>
-            <a
-              href="#"
-              style={{ color: "var(--fg-tertiary)", display: "inline-flex" }}
-            >
-              <Brand name="x" size={16} />
-            </a>
+          macOS 13+
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BigSignature({ children }) {
+  return (
+    <span
+      aria-hidden
+      style={{
+        position: "absolute",
+        left: "50%",
+        bottom: "-9%",
+        transform: "translateX(-50%)",
+        fontFamily: "var(--font-display)",
+        fontWeight: 500,
+        fontSize: "min(440px, 30vw)",
+        lineHeight: 1,
+        letterSpacing: "-0.04em",
+        whiteSpace: "nowrap",
+        userSelect: "none",
+        pointerEvents: "none",
+        zIndex: 0,
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.06) 100%)",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
+function BarLink({ children }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <a
+      href="#"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        fontFamily: "var(--font-mono)",
+        fontSize: 12,
+        color: hover ? BAR_FG_BRIGHT : BAR_FG_DIM,
+        textDecoration: "none",
+        transition: "color var(--dur-fast)",
+      }}
+    >
+      {children}
+    </a>
+  );
+}
+
+function SocialIcon({ name, size = 15 }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <a
+      href="#"
+      aria-label={name}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        display: "inline-flex",
+        color: hover ? BAR_FG_BRIGHT : BAR_FG_DIM,
+        transition: "color var(--dur-fast)",
+      }}
+    >
+      <Brand name={name} size={size} />
+    </a>
+  );
+}
+
+export default function Footer({ onSignup }) {
+  return (
+    <footer style={{ background: STAGE_BG, color: "#FFFFFF" }}>
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          minHeight: 540,
+          padding: "96px 0 0",
+        }}
+      >
+        {/* ambient glow behind the device */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: "18%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 600,
+            height: 300,
+            background:
+              "radial-gradient(ellipse at center, rgba(56,224,138,0.12), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* faint grid for texture (very low opacity) */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            opacity: 0.4,
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px)," +
+              "linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 80% at 50% 30%, #000 30%, transparent 100%)",
+            maskImage:
+              "radial-gradient(ellipse 70% 80% at 50% 30%, #000 30%, transparent 100%)",
+          }}
+        />
+
+        <FooterDevice onDownload={onSignup} />
+        <BigSignature>justenv</BigSignature>
+      </section>
+
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          borderTop: `1px solid ${BAR_BORDER}`,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1240,
+            margin: "0 auto",
+            padding: "22px 32px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 24,
+            flexWrap: "wrap",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              color: BAR_FG_DIM,
+            }}
+          >
+            © 2026 justenv, Inc. All rights reserved.
+          </span>
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 28,
+              flexWrap: "wrap",
+            }}
+          >
+            <BarLink>Terms</BarLink>
+            <BarLink>Privacy</BarLink>
+            <BarLink>Security</BarLink>
+            <BarLink>Changelog</BarLink>
+          </nav>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <SocialIcon name="github" size={16} />
+            <SocialIcon name="x" size={14} />
           </div>
         </div>
       </div>
