@@ -147,11 +147,11 @@ function BigSignature({ children }) {
   );
 }
 
-function BarLink({ children }) {
+function BarLink({ href = "#", children }) {
   const [hover, setHover] = useState(false);
   return (
     <a
-      href="#"
+      href={href}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -271,10 +271,10 @@ export default function Footer({ onSignup }) {
               flexWrap: "wrap",
             }}
           >
-            <BarLink>Terms</BarLink>
-            <BarLink>Privacy</BarLink>
-            <BarLink>Security</BarLink>
-            <BarLink>Changelog</BarLink>
+            <BarLink href="/tos">Terms</BarLink>
+            <BarLink href="/privacy-policy">Privacy</BarLink>
+            <BarLink href="/security">Security</BarLink>
+            <BarLink href="/changelog">Changelog</BarLink>
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <SocialIcon name="github" size={16} />

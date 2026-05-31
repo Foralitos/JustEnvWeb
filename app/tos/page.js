@@ -1,99 +1,246 @@
-import Link from "next/link";
 import { getSEOTags } from "@/libs/seo";
-import config from "@/config";
-
-// CHATGPT PROMPT TO GENERATE YOUR TERMS & SERVICES — replace with your own data 👇
-
-// 1. Go to https://chat.openai.com/
-// 2. Copy paste bellow
-// 3. Replace the data with your own (if needed)
-// 4. Paste the answer from ChatGPT directly in the <pre> tag below
-
-// You are an excellent lawyer.
-
-// I need your help to write a simple Terms & Services for my website. Here is some context:
-// - Website: https://shipfa.st
-// - Name: ShipFast
-// - Contact information: marc@shipfa.st
-// - Description: A JavaScript code boilerplate to help entrepreneurs launch their startups faster
-// - Ownership: when buying a package, users can download code to create apps. They own the code but they do not have the right to resell it. They can ask for a full refund within 7 day after the purchase.
-// - User data collected: name, email and payment information
-// - Non-personal data collection: web cookies
-// - Link to privacy-policy: https://shipfa.st/privacy-policy
-// - Governing Law: France
-// - Updates to the Terms: users will be updated by email
-
-// Please write a simple Terms & Services for my site. Add the current date. Do not add or explain your reasoning. Answer:
+import DocLayout from "@/components/landing/DocLayout";
+import {
+  DocSection,
+  TLDR,
+  RoadmapPill,
+  DocList,
+  DocP,
+  Code,
+} from "@/components/landing/DocSection";
 
 export const metadata = getSEOTags({
-  title: `Terms and Conditions | ${config.appName}`,
+  title: "Terms of Service · justenv",
   canonicalUrlRelative: "/tos",
 });
 
-const TOS = () => {
+const TOC = [
+  { id: "basics", number: "01", label: "The basics" },
+  { id: "license", number: "02", label: "Your license" },
+  { id: "data", number: "03", label: "Your data, your secrets" },
+  { id: "billing", number: "04", label: "Billing & refunds" },
+  { id: "acceptable", number: "05", label: "Acceptable use" },
+  { id: "termination", number: "06", label: "Termination" },
+  { id: "warranty", number: "07", label: "Warranty & liability" },
+  { id: "changes", number: "08", label: "Changes" },
+  { id: "law", number: "09", label: "Governing law" },
+  { id: "contact", number: "10", label: "Contact" },
+];
+
+export default function TermsPage() {
   return (
-    <main className="max-w-xl mx-auto">
-      <div className="p-5">
-        <Link href="/" className="btn btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Back
-        </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Terms and Conditions for {config.appName}
-        </h1>
+    <DocLayout
+      eyebrow="Terms"
+      title="Terms of service."
+      effectiveDate="May 31, 2026"
+      version="0.1"
+      toc={TOC}
+    >
+      <TLDR>
+        We make the tool, you keep the secrets. Use justenv reasonably, pay for
+        what you use, and we will not snoop on your vault.
+      </TLDR>
 
-        <pre
-          className="leading-relaxed whitespace-pre-wrap"
-          style={{ fontFamily: "sans-serif" }}
-        >
-          {`Last Updated: September 26, 2023
+      <DocSection
+        id="basics"
+        number="01"
+        eyebrow="What this is"
+        title="The basics."
+      >
+        <DocP>
+          These Terms govern your use of <Code>justenv</Code> — the macOS app,
+          the <Code>envsvault</Code> CLI, and any related services we run from{" "}
+          <Code>justenv.app</Code>. By installing the app, opening an account, or
+          using the CLI, you accept these Terms.
+        </DocP>
+        <DocP>
+          justenv is operated by Elfora (&ldquo;we&rdquo;, &ldquo;us&rdquo;). You are the user (&ldquo;you&rdquo;).
+          We wrote these Terms in plain language because we use developer tools
+          too and we hate legalese as much as you do.
+        </DocP>
+      </DocSection>
 
-Welcome to ShipFast!
+      <DocSection
+        id="license"
+        number="02"
+        eyebrow="What you can do with it"
+        title="Your license to use justenv."
+      >
+        <DocP>
+          We grant you a personal, non-exclusive, non-transferable license to
+          install and use the justenv macOS app and the <Code>envsvault</Code>{" "}
+          CLI on devices you control.
+        </DocP>
+        <DocList>
+          <li>
+            <strong>Free for solo developers.</strong> If you use justenv on
+            your own devices, the app is free, forever. No card required.
+          </li>
+          <li>
+            <strong>Team plan</strong> <RoadmapPill /> — Paid per seat. Lets you
+            invite teammates, share secrets through audited workspaces, and use
+            the share-link service.
+          </li>
+          <li>
+            You may not redistribute the binary, sublicense it, reverse-engineer
+            it to ship a competing product, or strip the brand.
+          </li>
+        </DocList>
+      </DocSection>
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+      <DocSection
+        id="data"
+        number="03"
+        eyebrow="What is yours"
+        title="Your data, your secrets."
+      >
+        <DocP>
+          Anything you put inside justenv — environment variables, project
+          names, notes — is <strong>yours</strong>. You can export, modify, or
+          delete it at any time from the app.
+        </DocP>
+        <DocP>
+          Because we encrypt your vault on your device before it ever leaves it
+          (see the{" "}
+          <a href="/security" style={{ color: "var(--accent)" }}>
+            Security page
+          </a>{" "}
+          for the cryptographic details), <strong>we cannot read your secret
+          values</strong>. That also means we cannot recover them if you lose
+          your master password.
+        </DocP>
+        <DocP>
+          You are responsible for what you store. Do not put secrets that are
+          not yours to store, and do not use justenv as a way to bypass the
+          security controls of services you do not own.
+        </DocP>
+      </DocSection>
 
-1. Description of ShipFast
+      <DocSection
+        id="billing"
+        number="04"
+        eyebrow="Money"
+        title="Subscription, billing & refunds."
+      >
+        <DocP>
+          The Free tier is free. The Team tier <RoadmapPill /> is billed monthly
+          or annually in advance via Stripe. We never see or store your card
+          number.
+        </DocP>
+        <DocList>
+          <li>
+            <strong>Refunds:</strong> if a Team subscription doesn’t fit, email
+            us within 14 days of the charge and we’ll refund it in full.
+          </li>
+          <li>
+            <strong>Auto-renewal:</strong> Team subscriptions renew at the end
+            of each billing period until you cancel. Cancel from the app or by
+            emailing support.
+          </li>
+          <li>
+            <strong>Taxes:</strong> prices exclude tax. Where required, we
+            collect and remit it.
+          </li>
+        </DocList>
+      </DocSection>
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+      <DocSection
+        id="acceptable"
+        number="05"
+        eyebrow="Don't be that person"
+        title="Acceptable use."
+      >
+        <DocP>While using justenv, you agree not to:</DocP>
+        <DocList>
+          <li>Store content that is illegal, infringes someone else’s rights, or violates export control law.</li>
+          <li>Abuse the share-link service <RoadmapPill /> (we apply rate limits and may block obvious automated abuse).</li>
+          <li>Attempt to break, exhaust, or probe our systems beyond responsible disclosure (see the Security page).</li>
+          <li>Resell hosted Team workspaces to third parties as a service.</li>
+        </DocList>
+      </DocSection>
 
-2. Ownership and Usage Rights
+      <DocSection
+        id="termination"
+        number="06"
+        eyebrow="Leaving"
+        title="Termination."
+      >
+        <DocP>
+          You can stop using justenv at any time. Your local vault stays on
+          your Mac — uninstalling the app does not delete the file at{" "}
+          <Code>~/Library/Application Support/JustEnv/vault.json</Code>; remove
+          it yourself if you want a clean slate.
+        </DocP>
+        <DocP>
+          We may suspend or terminate accounts that violate these Terms,
+          especially the acceptable use clause. When we do, we will tell you
+          why and, where possible, give you a window to export your data.
+        </DocP>
+      </DocSection>
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+      <DocSection
+        id="warranty"
+        number="07"
+        eyebrow="The legal corner"
+        title="No warranty, limited liability."
+      >
+        <DocP>
+          justenv is provided <em>as is</em>, without warranty of any kind. We
+          do our best to keep the app stable, the cryptography sound, and the
+          servers up, but we can’t guarantee it works without interruption.
+        </DocP>
+        <DocP>
+          To the maximum extent allowed by law, our aggregate liability under
+          these Terms is capped at the amount you paid us in the twelve months
+          before the claim. For Free users, that cap is zero. We are not liable
+          for indirect, incidental, or consequential damages.
+        </DocP>
+      </DocSection>
 
-3. User Data and Privacy
+      <DocSection
+        id="changes"
+        number="08"
+        eyebrow="When this document moves"
+        title="Changes to these Terms."
+      >
+        <DocP>
+          We may update these Terms when the product or law changes. When we do,
+          we’ll bump the version number at the top and update the effective
+          date. For material changes, we send a notice by email to account
+          holders and show an in-app banner at least 14 days before the new
+          version takes effect.
+        </DocP>
+      </DocSection>
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
+      <DocSection
+        id="law"
+        number="09"
+        eyebrow="Where this is anchored"
+        title="Governing law & disputes."
+      >
+        <DocP>
+          These Terms are governed by the federal laws of the United Mexican
+          States. Any dispute we can’t settle by good-faith conversation will be
+          handled by the competent courts of Mexico City.
+        </DocP>
+        <DocP>
+          Before filing anything, please email{" "}
+          <Code>legal@justenv.app</Code>. We will respond within 10 business
+          days and try to resolve the issue without paper.
+        </DocP>
+      </DocSection>
 
-4. Non-Personal Data Collection
-
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
-
-5. Governing Law
-
-These Terms are governed by the laws of France.
-
-6. Updates to the Terms
-
-We may update these Terms from time to time. Users will be notified of any changes via email.
-
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
-
-Thank you for using ShipFast!`}
-        </pre>
-      </div>
-    </main>
+      <DocSection
+        id="contact"
+        number="10"
+        eyebrow="Reach us"
+        title="Contact."
+      >
+        <DocP>
+          Questions about these Terms: <Code>legal@justenv.app</Code>.<br />
+          Anything else: <Code>elfora.dev@gmail.com</Code>.
+        </DocP>
+      </DocSection>
+    </DocLayout>
   );
-};
-
-export default TOS;
+}
