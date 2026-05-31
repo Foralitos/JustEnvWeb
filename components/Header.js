@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import ThemeToggle from "./ThemeToggle";
-import logo from "@/app/icon.png";
+import logo from "@/app/icon.svg";
 import config from "@/config";
 
 const links = [
