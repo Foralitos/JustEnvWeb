@@ -28,11 +28,17 @@ export default function HowItWorks() {
       id="how"
       style={{
         position: "relative",
-        padding: "104px 0",
+        padding: "clamp(64px, 12vw, 104px) 0",
         overflow: "hidden",
         borderTop: "1px solid var(--border-subtle)",
       }}
     >
+      <style>{`
+        @media (max-width: 720px) {
+          .hiw-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+          .hiw-headline { font-size: clamp(28px, 7vw, 44px) !important; }
+        }
+      `}</style>
       <GridBG fade="radial-gradient(ellipse 70% 90% at 50% 50%, #000 30%, transparent 100%)" />
       <div
         aria-hidden
@@ -53,16 +59,17 @@ export default function HowItWorks() {
           position: "relative",
           maxWidth: 1120,
           margin: "0 auto",
-          padding: "0 32px",
+          padding: "0 clamp(20px, 4vw, 32px)",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: 56 }}>
+        <div style={{ textAlign: "center", marginBottom: "clamp(36px, 6vw, 56px)" }}>
           <Overline>HOW IT WORKS</Overline>
-          <h2 className="ds-display-lg" style={{ margin: "14px 0 0" }}>
+          <h2 className="ds-display-lg hiw-headline" style={{ margin: "14px 0 0" }}>
             Three steps. Zero copy-paste.
           </h2>
         </div>
         <div
+          className="hiw-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -75,7 +82,7 @@ export default function HowItWorks() {
               className="ds-glass"
               style={{
                 borderRadius: "var(--radius-lg)",
-                padding: 26,
+                padding: "clamp(20px, 4vw, 26px)",
                 background: "var(--glass-fill)",
               }}
             >

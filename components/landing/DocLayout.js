@@ -40,7 +40,7 @@ export default function DocLayout({
           position: "relative",
           maxWidth: 1120,
           margin: "0 auto",
-          padding: "28px 32px 0",
+          padding: "28px clamp(16px, 4vw, 32px) 0",
         }}
       >
         <Link
@@ -66,7 +66,7 @@ export default function DocLayout({
           Back to home
         </Link>
 
-        <header style={{ margin: "72px 0 0", maxWidth: 880 }}>
+        <header style={{ margin: "clamp(48px, 8vw, 72px) 0 0", maxWidth: 880 }}>
           <div
             style={{
               fontFamily: "var(--font-mono)",
@@ -116,7 +116,7 @@ export default function DocLayout({
             display: "grid",
             gridTemplateColumns: hasToc ? "220px 1fr" : "1fr",
             gap: hasToc ? 56 : 0,
-            marginTop: 72,
+            marginTop: "clamp(48px, 7vw, 72px)",
             alignItems: "start",
           }}
           className="doc-grid"

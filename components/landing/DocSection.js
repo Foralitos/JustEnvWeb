@@ -41,7 +41,7 @@ export function DocSection({ id, number, eyebrow, title, children }) {
           fontFamily: "var(--font-display)",
           fontWeight: 500,
           fontStyle: "italic",
-          fontSize: 36,
+          fontSize: "clamp(26px, 4.5vw, 36px)",
           lineHeight: 1.15,
           letterSpacing: "-0.014em",
           color: "var(--fg-primary)",
@@ -70,7 +70,7 @@ export function TLDR({ children }) {
       className="ds-glass"
       style={{
         borderRadius: "var(--radius-xl)",
-        padding: "26px 28px",
+        padding: "clamp(20px, 4vw, 26px) clamp(20px, 4vw, 28px)",
         marginTop: 24,
         background: "var(--accent-soft)",
         border: "1px solid var(--border-accent)",
@@ -95,7 +95,7 @@ export function TLDR({ children }) {
           fontFamily: "var(--font-display)",
           fontWeight: 500,
           fontStyle: "italic",
-          fontSize: 22,
+          fontSize: "clamp(18px, 3.5vw, 22px)",
           lineHeight: 1.4,
           letterSpacing: "-0.008em",
           color: "var(--fg-primary)",
@@ -137,6 +137,7 @@ export function RoadmapPill() {
 export function MetaRow({ label, value, mono = true }) {
   return (
     <div
+      className="meta-row"
       style={{
         display: "grid",
         gridTemplateColumns: "minmax(140px, 200px) 1fr",
@@ -146,6 +147,11 @@ export function MetaRow({ label, value, mono = true }) {
         alignItems: "baseline",
       }}
     >
+      <style>{`
+        @media (max-width: 520px) {
+          .meta-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+        }
+      `}</style>
       <span
         style={{
           fontFamily: "var(--font-mono)",

@@ -11,7 +11,7 @@ function Feature({ icon, title, body }) {
       onMouseLeave={() => setHover(false)}
       style={{
         background: hover ? "var(--bg-surface)" : "var(--bg-raised)",
-        padding: 28,
+        padding: "clamp(22px, 4vw, 28px)",
         transition: "background var(--dur-fast)",
       }}
     >
@@ -79,8 +79,21 @@ export default function UseCases() {
   return (
     <section
       id="cases"
-      style={{ position: "relative", padding: "104px 0", overflow: "hidden" }}
+      style={{
+        position: "relative",
+        padding: "clamp(64px, 12vw, 104px) 0",
+        overflow: "hidden",
+      }}
     >
+      <style>{`
+        @media (max-width: 960px) {
+          .uc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 600px) {
+          .uc-grid { grid-template-columns: 1fr !important; }
+          .uc-headline { font-size: clamp(28px, 7vw, 44px) !important; }
+        }
+      `}</style>
       <GridBG
         fade="radial-gradient(ellipse 90% 80% at 50% 40%, #000 35%, transparent 100%)"
         opacity={0.7}
@@ -90,12 +103,12 @@ export default function UseCases() {
           position: "relative",
           maxWidth: 1120,
           margin: "0 auto",
-          padding: "0 32px",
+          padding: "0 clamp(20px, 4vw, 32px)",
         }}
       >
-        <div style={{ marginBottom: 48, maxWidth: 560 }}>
+        <div style={{ marginBottom: "clamp(32px, 5vw, 48px)", maxWidth: 560 }}>
           <Overline>USE CASES</Overline>
-          <h2 className="ds-display-lg" style={{ margin: "14px 0 14px" }}>
+          <h2 className="ds-display-lg uc-headline" style={{ margin: "14px 0 14px" }}>
             Built for the way teams actually ship.
           </h2>
           <p className="ds-body-lg" style={{ margin: 0 }}>
@@ -104,6 +117,7 @@ export default function UseCases() {
           </p>
         </div>
         <div
+          className="uc-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

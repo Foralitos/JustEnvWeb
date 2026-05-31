@@ -15,9 +15,9 @@ export default function SignupModal({ open, onClose }) {
   if (!open) return null;
 
   const glass = {
-    width: 420,
+    width: "min(420px, calc(100vw - 32px))",
     borderRadius: 22,
-    padding: 30,
+    padding: "clamp(22px, 5vw, 30px)",
     background: "color-mix(in srgb, var(--bg-surface) 55%, transparent)",
     backdropFilter: "blur(40px) saturate(180%)",
     WebkitBackdropFilter: "blur(40px) saturate(180%)",
@@ -56,7 +56,7 @@ export default function SignupModal({ open, onClose }) {
           <>
             <h3
               className="ds-display-lg"
-              style={{ textAlign: "center", margin: "0 0 6px", fontSize: 28 }}
+              style={{ textAlign: "center", margin: "0 0 6px", fontSize: "clamp(22px, 6vw, 28px)" }}
             >
               Download justenv
             </h3>
@@ -142,7 +142,7 @@ export default function SignupModal({ open, onClose }) {
             </div>
             <h3
               className="ds-display-lg"
-              style={{ margin: "0 0 8px", fontSize: 26 }}
+              style={{ margin: "0 0 8px", fontSize: "clamp(20px, 5.5vw, 26px)" }}
             >
               Check your inbox
             </h3>
@@ -205,7 +205,7 @@ export default function SignupModal({ open, onClose }) {
             </div>
             <h3
               className="ds-display-lg"
-              style={{ margin: "0 0 8px", fontSize: 26 }}
+              style={{ margin: "0 0 8px", fontSize: "clamp(20px, 5.5vw, 26px)" }}
             >
               You&apos;re in
             </h3>

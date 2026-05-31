@@ -26,7 +26,7 @@ function EnvPreview() {
   ];
   return (
     <div
-      className="ds-glass"
+      className="ds-glass env-preview"
       style={{
         borderRadius: "var(--radius-xl)",
         overflow: "hidden",
@@ -37,7 +37,19 @@ function EnvPreview() {
         WebkitBackdropFilter: "blur(40px) saturate(180%)",
       }}
     >
+      <style>{`
+        @media (max-width: 720px) {
+          .env-preview .env-chrome { gap: 10px; flex-wrap: wrap; padding: 11px 12px; }
+          .env-preview .env-chrome .env-filename { font-size: 11px; }
+          .env-preview .env-row { padding: 14px 14px; flex-wrap: wrap; gap: 4px; position: relative; }
+          .env-preview .env-row .env-key { width: auto; flex: 1 1 100%; padding-right: 36px; }
+          .env-preview .env-row .env-value { flex: 1 1 100%; font-size: 12px; }
+          .env-preview .env-row .env-eye { position: absolute; right: 12px; top: 12px; }
+          .env-preview .env-footer { padding: 11px 14px; flex-wrap: wrap; gap: 6px; }
+        }
+      `}</style>
       <div
+        className="env-chrome"
         style={{
           display: "flex",
           alignItems: "center",
@@ -61,6 +73,7 @@ function EnvPreview() {
           ))}
         </div>
         <span
+          className="env-filename"
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 12,
@@ -99,6 +112,7 @@ function EnvPreview() {
           return (
             <div
               key={row.k}
+              className="env-row"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -111,6 +125,7 @@ function EnvPreview() {
               }}
             >
               <span
+                className="env-key"
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 13,
@@ -125,6 +140,7 @@ function EnvPreview() {
                 {row.k}
               </span>
               <span
+                className="env-value"
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 13,
@@ -139,6 +155,7 @@ function EnvPreview() {
                 {show ? row.v : "••••••••••••••••"}
               </span>
               <button
+                className="env-eye"
                 onClick={() =>
                   setRevealed((r) => ({ ...r, [env + row.k]: !show }))
                 }
@@ -164,6 +181,7 @@ function EnvPreview() {
         })}
       </div>
       <div
+        className="env-footer"
         style={{
           padding: "11px 18px",
           borderTop: "1px solid var(--border-subtle)",
@@ -280,8 +298,8 @@ export default function Hero({ onSignup }) {
       id="top"
       style={{
         position: "relative",
-        paddingTop: 40,
-        paddingBottom: 64,
+        paddingTop: "clamp(24px, 4vw, 40px)",
+        paddingBottom: "clamp(40px, 6vw, 64px)",
         overflow: "hidden",
         minHeight: "94vh",
         display: "flex",
@@ -322,7 +340,7 @@ export default function Hero({ onSignup }) {
           width: "100%",
           maxWidth: 1240,
           margin: "0 auto",
-          padding: "0 40px",
+          padding: "0 clamp(20px, 4vw, 40px)",
           flex: 1,
           display: "flex",
           flexDirection: "column",
@@ -342,7 +360,7 @@ export default function Hero({ onSignup }) {
         </div>
 
         <div style={{ maxWidth: 620, marginTop: 44 }}>
-            <h1 className="ds-display-xl" style={{ margin: 0, fontSize: 60 }}>
+            <h1 className="ds-display-xl" style={{ margin: 0, fontSize: "clamp(36px, 7vw, 60px)" }}>
               Your environment variables,
               <br />
               finally in{" "}
@@ -382,7 +400,10 @@ export default function Hero({ onSignup }) {
                 variant="accent"
                 size="lg"
                 onClick={onSignup}
-                style={{ padding: "15px 28px", fontSize: 16 }}
+                style={{
+                  padding: "clamp(12px, 2.4vw, 15px) clamp(20px, 4vw, 28px)",
+                  fontSize: "clamp(14px, 1.7vw, 16px)",
+                }}
               >
                 <Brand
                   name="apple"

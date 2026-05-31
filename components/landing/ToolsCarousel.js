@@ -128,11 +128,16 @@ export default function ToolsCarousel() {
     <section
       style={{
         position: "relative",
-        padding: "104px 0",
+        padding: "clamp(64px, 12vw, 104px) 0",
         overflow: "hidden",
         borderTop: "1px solid var(--border-subtle)",
       }}
     >
+      <style>{`
+        @media (max-width: 720px) {
+          .tools-headline { font-size: clamp(28px, 7vw, 44px) !important; }
+        }
+      `}</style>
       <div
         aria-hidden
         style={{
@@ -152,14 +157,14 @@ export default function ToolsCarousel() {
           position: "relative",
           maxWidth: 1120,
           margin: "0 auto",
-          padding: "0 32px",
+          padding: "0 clamp(20px, 4vw, 32px)",
           textAlign: "center",
-          marginBottom: 48,
+          marginBottom: "clamp(32px, 5vw, 48px)",
         }}
       >
         <Overline>WORKS WITH YOUR STACK</Overline>
         <h2
-          className="ds-display-lg"
+          className="ds-display-lg tools-headline"
           style={{ margin: "14px auto 14px", maxWidth: 640 }}
         >
           One vault for every project.

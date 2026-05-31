@@ -11,10 +11,11 @@ const BAR_BORDER = "rgba(255,255,255,0.10)";
 function FooterDevice({ onDownload }) {
   return (
     <div
+      className="footer-device"
       style={{
         position: "relative",
         zIndex: 1,
-        width: "min(520px, calc(100% - 48px))",
+        width: "min(520px, calc(100% - 32px))",
         margin: "0 auto",
         display: "grid",
         gridTemplateColumns: "minmax(0, 1.05fr) minmax(0, 0.95fr)",
@@ -128,7 +129,7 @@ function BigSignature({ children }) {
         transform: "translateX(-50%)",
         fontFamily: "var(--font-display)",
         fontWeight: 500,
-        fontSize: "min(440px, 30vw)",
+        fontSize: "min(440px, 38vw)",
         lineHeight: 1,
         letterSpacing: "-0.04em",
         whiteSpace: "nowrap",
@@ -189,12 +190,20 @@ function SocialIcon({ name, size = 15 }) {
 export default function Footer({ onSignup }) {
   return (
     <footer style={{ background: STAGE_BG, color: "#FFFFFF" }}>
+      <style>{`
+        @media (max-width: 480px) {
+          .footer-device { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .footer-bar { padding: 20px 16px !important; gap: 14px !important; }
+        }
+      `}</style>
       <section
         style={{
           position: "relative",
           overflow: "hidden",
-          minHeight: 540,
-          padding: "96px 0 0",
+          minHeight: "clamp(420px, 60vw, 540px)",
+          padding: "clamp(64px, 12vw, 96px) 0 clamp(20px, 8vw, 60px)",
         }}
       >
         {/* ambient glow behind the device */}
@@ -243,6 +252,7 @@ export default function Footer({ onSignup }) {
         }}
       >
         <div
+          className="footer-bar"
           style={{
             maxWidth: 1240,
             margin: "0 auto",
