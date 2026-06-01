@@ -1,29 +1,29 @@
 import { NextResponse } from "next/server";
 import connectMongo from "@/libs/mongoose";
+import Lead from "@/models/Lead";
 
-// This route is used to store the leads that are generated from the landing page.
-// The API call is initiated by <ButtonLead /> component
-// Duplicate emails just return 200 OK
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// This route stores leads captured from the landing page download modal.
+// Duplicate emails just return 200 OK without creating a new record.
 export async function POST(req) {
   await connectMongo();
 
   const body = await req.json();
+  const email = typeof body.email === "string" ? body.email.trim() : "";
 
-  if (!body.email) {
-    return NextResponse.json({ error: "Email is required" }, { status: 400 });
+  if (!email || !EMAIL_RE.test(email)) {
+    return NextResponse.json(
+      { error: "Valid email required" },
+      { status: 400 }
+    );
   }
 
   try {
-    // Here you can add your own logic
-    // For instance, sending a welcome email (use the the sendEmail helper function from /libs/resend)
-    // For instance, saving the lead in the database (uncomment the code below)
-
-    // const lead = await Lead.findOne({ email: body.email });
-
-    // if (!lead) {
-    // 	await Lead.create({ email: body.email });
-    // }
-
+    const existing = await Lead.findOne({ email });
+    if (!existing) {
+      await Lead.create({ email });
+    }
     return NextResponse.json({});
   } catch (e) {
     console.error(e);

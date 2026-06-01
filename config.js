@@ -85,6 +85,10 @@ const config = {
     loginUrl: "/api/auth/signin",
     callbackUrl: "/dashboard",
   },
+  download: {
+    dmgUrl:
+      "https://github.com/Foralitos/justenv-releases/releases/download/v1.0.0/JustEnv-1.0.0.dmg",
+  },
 };
 
 export default config;
