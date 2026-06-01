@@ -87,7 +87,7 @@ const config = {
   },
   download: {
     dmgUrl:
-      "https://github.com/Foralitos/justenv-releases/releases/download/v1.0.0/JustEnv-1.0.0.dmg",
+      "https://github.com/Foralitos/justenv-releases/releases/download/v1.0.1/JustEnv-1.0.1.dmg",
   },
 };
 
