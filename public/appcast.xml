@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparkle update feed for JustEnv (macOS).
+  Each release appends a new <item> with version, DMG enclosure and EdDSA
+  signature. The signature is generated locally by release.sh via sign_update;
+  if it doesn't match, Sparkle rejects the update silently. Keep this file
+  small and append-only.
+-->
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>JustEnv</title>
+    <link>https://justenvs.app/appcast.xml</link>
+    <description>Updates for JustEnv</description>
+    <language>en</language>
+    <item>
+      <title>Version 1.0.0</title>
+      <pubDate>Mon, 01 Jun 2026 13:48:00 -0600</pubDate>
+      <sparkle:version>202606011348</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/Foralitos/justenv-releases/releases/download/v1.0.0/JustEnv-1.0.0.dmg" type="application/octet-stream" sparkle:edSignature="XNFL42BxnSZQuvN3K/zQTh7X/2OnvDIW9bV2yzUsuI2an88OZ4q4TU6qEY3WxvK8E6zovH41SdlmbOVf+QF1DQ==" length="1871317" />
+    </item>
+  </channel>
+</rss>
