@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Icon, Logo, Button, Brand, GridBG } from "./lib";
+import { Icon, Button, Brand, GridBG, BrandMark } from "./lib";
 import ThemeToggle from "./ThemeToggle";
 
 function EnvPreview() {
@@ -224,38 +224,6 @@ function EnvPreview() {
         </span>
       </div>
     </div>
-  );
-}
-
-function BrandMark() {
-  return (
-    <a
-      href="#top"
-      style={{
-        textDecoration: "none",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 9,
-      }}
-    >
-      <Logo size={19} />
-      <span
-        style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: 10,
-          fontWeight: 600,
-          letterSpacing: "0.07em",
-          color: "var(--accent)",
-          background: "var(--accent-soft)",
-          border: "1px solid var(--border-accent)",
-          padding: "2px 7px",
-          borderRadius: "var(--radius-full)",
-          textTransform: "uppercase",
-        }}
-      >
-        Beta
-      </span>
-    </a>
   );
 }
 

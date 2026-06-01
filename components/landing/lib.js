@@ -155,6 +155,38 @@ export function Overline({ children, style }) {
   );
 }
 
+export function BrandMark({ href = "#top", size = 19 }) {
+  return (
+    <a
+      href={href}
+      style={{
+        textDecoration: "none",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 9,
+      }}
+    >
+      <Logo size={size} />
+      <span
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: 10,
+          fontWeight: 600,
+          letterSpacing: "0.07em",
+          color: "var(--accent)",
+          background: "var(--accent-soft)",
+          border: "1px solid var(--border-accent)",
+          padding: "2px 7px",
+          borderRadius: "var(--radius-full)",
+          textTransform: "uppercase",
+        }}
+      >
+        Beta
+      </span>
+    </a>
+  );
+}
+
 export function GridBG({
   fade = "radial-gradient(ellipse 80% 70% at 50% 0%, #000 35%, transparent 100%)",
   size = 56,

@@ -12,5 +12,17 @@ export const metadata = getSEOTags({
 });
 
 export default function ShareLayout({ children }) {
-  return <div className="min-h-screen bg-base-100">{children}</div>;
+  return (
+    <div
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        background: "var(--bg-base)",
+        color: "var(--fg-primary)",
+        overflow: "hidden",
+      }}
+    >
+      {children}
+    </div>
+  );
 }
