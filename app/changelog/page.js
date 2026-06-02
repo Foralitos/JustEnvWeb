@@ -9,6 +9,26 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "1.0.2",
+    date: "Jun 1, 2026",
+    tagline: "Beta limit, faster project delete, polish.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Beta limit: up to 5 projects per vault, with an in-app counter in the sidebar.",
+      },
+      {
+        kind: "Added",
+        text: "Right-click on any project (sidebar or grid) to delete it — confirmation + Touch ID required.",
+      },
+      {
+        kind: "Fixed",
+        text: "Sidebar brand header no longer wraps on narrow widths.",
+      },
+    ],
+  },
+  {
     version: "0.1.0",
     date: "May 31, 2026",
     tagline: "Initial public beta.",
