@@ -168,11 +168,13 @@ function BarLink({ href = "#", children }) {
   );
 }
 
-function SocialIcon({ name, size = 15 }) {
+function SocialIcon({ name, href = "#", size = 15 }) {
   const [hover, setHover] = useState(false);
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={name}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -287,8 +289,16 @@ export default function Footer({ onSignup }) {
             <BarLink href="/changelog">Changelog</BarLink>
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <SocialIcon name="github" size={16} />
-            <SocialIcon name="x" size={14} />
+            <SocialIcon
+              name="github"
+              href="https://github.com/Foralitos"
+              size={16}
+            />
+            <SocialIcon
+              name="x"
+              href="https://x.com/ElforaDev"
+              size={14}
+            />
           </div>
         </div>
       </div>
