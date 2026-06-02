@@ -12,15 +12,15 @@ export default function HowItWorks() {
     },
     {
       n: "02",
-      icon: "users",
-      title: "Share with your team",
-      body: "Invite a workspace or a single teammate. Grant per-environment access — no more secrets in DMs.",
+      icon: "link",
+      title: "Share a secure link",
+      body: "Pick how long it lives — 1h, 1d, or 7d — and how many opens. Send it anywhere; no account needed to receive.",
     },
     {
       n: "03",
-      icon: "refresh-cw",
-      title: "Stay in sync",
-      body: "Update or rotate a secret and your whole team gets the new value instantly. No more out-of-date .env files.",
+      icon: "timer",
+      title: "Stays in your hands",
+      body: "Links self-destruct on view limit or expiration. Nothing lingers in chat history.",
     },
   ];
   return (

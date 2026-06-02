@@ -48,32 +48,32 @@ export default function UseCases() {
     {
       icon: "git-branch",
       title: "Per-environment secrets",
-      body: "Separate production, staging, and preview. Promote a value upstream when it's ready.",
+      body: "Keep production, staging and preview separate inside the app. Switch contexts without copy-paste.",
     },
     {
       icon: "shield-check",
       title: "End-to-end encryption",
-      body: "Secrets are sealed with your team key before they leave your machine. We never see plaintext.",
+      body: "Secrets are sealed on your device before they leave it. We never see plaintext.",
     },
     {
-      icon: "history",
-      title: "Versioned & auditable",
-      body: "Every change is logged. Roll back a bad value and see who touched what, when.",
+      icon: "timer",
+      title: "Self-destructing shares",
+      body: "Pick a TTL — 1 hour, 1 day, or 7 days — and a view counter. Links delete themselves when used up.",
     },
     {
-      icon: "refresh-cw",
-      title: "One-click rotation",
-      body: "Rotate a key and everyone on your team gets the new value instantly — no stale secrets left behind.",
+      icon: "flame",
+      title: "Burn-after-read",
+      body: "Mark a share so it dies the moment someone opens it. No second chances, no leaked links in DMs.",
     },
     {
       icon: "monitor",
       title: "Native Mac app",
-      body: "A fast, native macOS app for your whole team. Quick access from the menu bar — nothing to configure.",
+      body: "A fast, native macOS app that lives in your menu bar. Universal binary, macOS 13 or later.",
     },
     {
-      icon: "user-plus",
-      title: "Granular access",
-      body: "Invite by environment. Read-only for contractors, full access for the core team.",
+      icon: "link",
+      title: "No signup to receive",
+      body: "Send a link to anyone. They open it, decrypt locally in the browser, done. No account, no Slack invite.",
     },
   ];
   return (
@@ -109,11 +109,11 @@ export default function UseCases() {
         <div style={{ marginBottom: "clamp(32px, 5vw, 48px)", maxWidth: 560 }}>
           <Overline>USE CASES</Overline>
           <h2 className="ds-display-lg uc-headline" style={{ margin: "14px 0 14px" }}>
-            Built for the way teams actually ship.
+            Built for the secrets you actually handle.
           </h2>
           <p className="ds-body-lg" style={{ margin: 0 }}>
-            From a solo side-project to a 50-person engineering org — justenv
-            scales with how you manage secrets.
+            From a solo side-project to a quick handoff — justenv keeps your
+            secrets in one place and shares them without leaving a trail.
           </p>
         </div>
         <div

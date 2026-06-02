@@ -162,22 +162,22 @@ export default function ToolsCarousel() {
           marginBottom: "clamp(32px, 5vw, 48px)",
         }}
       >
-        <Overline>WORKS WITH YOUR STACK</Overline>
+        <Overline>THE .ENV FORMAT YOU ALREADY USE</Overline>
         <h2
           className="ds-display-lg tools-headline"
           style={{ margin: "14px auto 14px", maxWidth: 640 }}
         >
-          One vault for every project.
+          Every .env you already write.
         </h2>
         <p className="ds-body-lg" style={{ margin: "0 auto", maxWidth: 520 }}>
-          Store the{" "}
+          If your stack reads a{" "}
           <code
             style={{ fontFamily: "var(--font-mono)", color: "var(--fg-primary)" }}
           >
             .env
-          </code>{" "}
-          for any framework or service, and share it with your team — encrypted,
-          organized, never in a DM.
+          </code>
+          , justenv works with it. Store them locally in the app, share them
+          with encrypted links when you need to hand off.
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>

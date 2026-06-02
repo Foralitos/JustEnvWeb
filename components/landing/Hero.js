@@ -191,7 +191,7 @@ function EnvPreview() {
           gap: 9,
         }}
       >
-        <Icon name="users" size={14} color="var(--fg-tertiary)" />
+        <Icon name="link" size={14} color="var(--fg-tertiary)" />
         <span
           style={{
             fontFamily: "var(--font-mono)",
@@ -199,7 +199,7 @@ function EnvPreview() {
             color: "var(--fg-secondary)",
           }}
         >
-          Shared with 6 teammates · {env}
+          Shared via link · expires in 24h · {env}
         </span>
         <span
           style={{
@@ -220,7 +220,7 @@ function EnvPreview() {
               background: "var(--accent)",
             }}
           />
-          synced
+          encrypted
         </span>
       </div>
     </div>
