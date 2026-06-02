@@ -4,7 +4,6 @@ import {
   Body,
   Container,
   Section,
-  Img,
   Heading,
   Text,
   Button,
@@ -15,11 +14,10 @@ import {
 
 const colors = {
   bg: "#0A1410",
-  card: "#0E1A14",
   accent: "#38E08A",
   accentSoft: "rgba(56, 224, 138, 0.14)",
   fgPrimary: "#F2F4F3",
-  fgSecondary: "#9BA8A1",
+  fgSecondary: "#C2CCC7",
   fgTertiary: "#6B7872",
   border: "rgba(255, 255, 255, 0.08)",
 };
@@ -36,6 +34,9 @@ export default function WelcomeBeta({
   dmgUrl = "https://justenvs.app",
   siteUrl = "https://justenvs.app",
 }) {
+  const overlayGradient =
+    "linear-gradient(180deg, rgba(10,20,16,0.05) 0%, rgba(10,20,16,0.35) 35%, rgba(10,20,16,0.78) 70%, rgba(10,20,16,0.94) 100%)";
+
   return (
     <Html lang="en">
       <Head>
@@ -63,36 +64,17 @@ export default function WelcomeBeta({
             backgroundColor: colors.bg,
           }}
         >
-          {/* Hero — full-bleed poster, continuous dark bg */}
+          {/* Wallpaper section — image as background, text layered on top */}
           <Section
+            background={heroUrl}
             style={{
-              padding: 0,
-              margin: 0,
+              backgroundImage: `${overlayGradient}, url("${heroUrl}")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center top",
+              backgroundRepeat: "no-repeat",
               backgroundColor: colors.bg,
-              lineHeight: 0,
-            }}
-          >
-            <Img
-              src={heroUrl}
-              width="600"
-              alt="JustEnv — welcome to the beta"
-              style={{
-                display: "block",
-                width: "100%",
-                maxWidth: 600,
-                height: "auto",
-                border: 0,
-                outline: "none",
-                textDecoration: "none",
-              }}
-            />
-          </Section>
-
-          {/* Welcome content — same dark bg flows from image */}
-          <Section
-            style={{
-              backgroundColor: colors.bg,
-              padding: "0 32px 8px",
+              padding: "300px 32px 48px",
+              width: "100%",
             }}
           >
             <Text
@@ -119,6 +101,7 @@ export default function WelcomeBeta({
                 fontWeight: 500,
                 color: colors.fgPrimary,
                 margin: "0 0 24px",
+                textShadow: "0 1px 24px rgba(0,0,0,0.5)",
               }}
             >
               You&rsquo;re in.
@@ -131,6 +114,7 @@ export default function WelcomeBeta({
                 lineHeight: 1.65,
                 color: colors.fgSecondary,
                 margin: "0 0 18px",
+                textShadow: "0 1px 12px rgba(0,0,0,0.5)",
               }}
             >
               Thanks for downloading JustEnv. You&rsquo;re now part of a small
@@ -145,6 +129,7 @@ export default function WelcomeBeta({
                 lineHeight: 1.65,
                 color: colors.fgSecondary,
                 margin: "0 0 32px",
+                textShadow: "0 1px 12px rgba(0,0,0,0.5)",
               }}
             >
               We&rsquo;re early, so things move fast. If something breaks, or
@@ -152,7 +137,6 @@ export default function WelcomeBeta({
               reply. The email goes straight to me.
             </Text>
 
-            {/* Primary CTA */}
             <Section style={{ margin: "0 0 18px" }}>
               <Button
                 href={dmgUrl}
@@ -168,6 +152,7 @@ export default function WelcomeBeta({
                   borderRadius: 10,
                   textDecoration: "none",
                   border: "1px solid rgba(255,255,255,0.05)",
+                  boxShadow: "0 8px 24px -10px rgba(56, 224, 138, 0.55)",
                 }}
               >
                 Re-download the Mac app
@@ -216,7 +201,7 @@ export default function WelcomeBeta({
             </Text>
           </Section>
 
-          {/* Footer */}
+          {/* Footer — outside the image card, same dark color for seamless extension */}
           <Section
             style={{
               backgroundColor: colors.bg,
