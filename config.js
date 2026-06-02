@@ -70,9 +70,9 @@ const config = {
   },
   resend: {
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `justenv <noreply@resend.justenv.app>`,
+    fromNoReply: `justenv <noreply@justenvs.app>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Fora at justenv <fora@resend.justenv.app>`,
+    fromAdmin: `Fora at justenv <fora@justenvs.app>`,
     // Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
     supportEmail: "elfora.dev@gmail.com",
   },

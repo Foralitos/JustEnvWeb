@@ -5,6 +5,7 @@ import Hero from "@/components/landing/Hero";
 import HowItWorks from "@/components/landing/HowItWorks";
 import ToolsCarousel from "@/components/landing/ToolsCarousel";
 import UseCases from "@/components/landing/UseCases";
+import Feedback from "@/components/landing/Feedback";
 import Footer from "@/components/landing/Footer";
 import SignupModal from "@/components/landing/SignupModal";
 
@@ -18,6 +19,7 @@ export default function Page() {
         <HowItWorks />
         <ToolsCarousel />
         <UseCases onSignup={open} />
+        <Feedback />
       </main>
       <Footer onSignup={open} />
       <SignupModal open={signup} onClose={() => setSignup(false)} />
