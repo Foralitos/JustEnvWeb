@@ -3,11 +3,43 @@ import DocLayout from "@/components/landing/DocLayout";
 import { RoadmapPill } from "@/components/landing/DocSection";
 
 export const metadata = getSEOTags({
-  title: "Changelog · justenv",
+  title: "Changelog · justenvs",
   canonicalUrlRelative: "/changelog",
 });
 
 const RELEASES = [
+  {
+    version: "2.0.0",
+    date: "Jun 4, 2026",
+    tagline: "Menu bar app, Touch ID rework, new foundation.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Menu bar app: open the popup from any app, search projects and copy values without bringing the main window to the front. Re-authenticates on every popup open.",
+      },
+      {
+        kind: "Added",
+        text: "Welcome screen on first launch with \"import existing vault\" or \"start fresh\" — older beta installs are detected and migrated automatically.",
+      },
+      {
+        kind: "Improved",
+        text: "Touch ID is now the primary unlock when available; master password stays one tap away.",
+      },
+      {
+        kind: "Fixed",
+        text: "Touch ID no longer forgets the saved key after a failed attempt — you can retry without re-entering your master password.",
+      },
+      {
+        kind: "Fixed",
+        text: "Removed duplicate Touch ID prompts when the menu bar popup and the main window unlock together.",
+      },
+      {
+        kind: "Security",
+        text: "Migrated to the Data Protection Keychain with a signed provisioning profile so the vault key is wrapped with a stronger access policy.",
+      },
+    ],
+  },
   {
     version: "1.0.2",
     date: "Jun 1, 2026",
@@ -259,7 +291,7 @@ export default function ChangelogPage() {
   return (
     <DocLayout
       eyebrow="Changelog"
-      title="What's new in justenv."
+      title="What's new in justenvs."
       version={RELEASES[0].version}
       effectiveDate={`Latest · ${RELEASES[0].date}`}
     >
