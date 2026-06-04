@@ -138,7 +138,7 @@ progress::-webkit-progress-value {
 }
 
 /* ============================================================
-   justenv — Design Tokens (LIGHT theme defaults)
+   justenvs — Design Tokens (LIGHT theme defaults)
    Dark overrides live under `.dark` selector below.
    ============================================================ */
 :root {
@@ -286,7 +286,7 @@ progress::-webkit-progress-value {
 }
 
 /* ============================================================
-   justenv — Semantic type utility classes
+   justenvs — Semantic type utility classes
    ============================================================ */
 .ds-display-2xl {
   font-family: var(--font-display); font-weight: var(--weight-medium);

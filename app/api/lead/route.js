@@ -39,16 +39,16 @@ export async function POST(req) {
         );
         await sendEmail({
           to: email,
-          subject: "Welcome to the JustEnv beta",
+          subject: "Welcome to the JustEnvs beta",
           text: [
-            "Thanks for downloading JustEnv. You're now part of a small group helping shape the simplest way teams handle environment variables — secure, in one place, never in a DM.",
+            "Thanks for downloading JustEnvs. You're now part of a small group helping shape the simplest way teams handle environment variables — secure, in one place, never in a DM.",
             "",
-            "We're early, so things move fast. If something breaks, or you can think of a tool you wish JustEnv talked to, just hit reply. The email goes straight to me.",
+            "We're early, so things move fast. If something breaks, or you can think of a tool you wish JustEnvs talked to, just hit reply. The email goes straight to me.",
             "",
             `Re-download the Mac app: ${config.download.dmgUrl}`,
             `Visit: ${siteUrl}`,
             "",
-            "— Fora, building JustEnv",
+            "— Fora, building JustEnvs",
           ].join("\n"),
           html,
         });

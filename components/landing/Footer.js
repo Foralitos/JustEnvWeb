@@ -30,7 +30,7 @@ function FooterDevice({ onDownload }) {
           "0 30px 80px -20px rgba(0,0,0,0.55), inset 0 1px 0 0 rgba(255,255,255,0.14)",
       }}
     >
-      {/* Left: app-icon-as-texture (the justenv mark centered, soft halo) */}
+      {/* Left: app-icon-as-texture (the justenvs mark centered, soft halo) */}
       <div
         style={{
           position: "relative",
@@ -243,7 +243,7 @@ export default function Footer({ onSignup }) {
         />
 
         <FooterDevice onDownload={onSignup} />
-        <BigSignature>justenv</BigSignature>
+        <BigSignature>justenvs</BigSignature>
       </section>
 
       <div
@@ -273,7 +273,7 @@ export default function Footer({ onSignup }) {
               color: BAR_FG_DIM,
             }}
           >
-            © 2026 justenv, Inc. All rights reserved.
+            © 2026 justenvs, Inc. All rights reserved.
           </span>
           <nav
             style={{

@@ -11,7 +11,7 @@ import {
 } from "@/components/landing/DocSection";
 
 export const metadata = getSEOTags({
-  title: "Security · justenv",
+  title: "Security · justenvs",
   canonicalUrlRelative: "/security",
 });
 
@@ -49,7 +49,7 @@ export default function SecurityPage() {
         title="In one paragraph."
       >
         <DocP>
-          justenv is a local-first, end-to-end-encrypted secrets vault. Your
+          justenvs is a local-first, end-to-end-encrypted secrets vault. Your
           master password never leaves your Mac, the data encryption key never
           touches our servers, and your secrets are AEAD-encrypted with a
           modern authenticated cipher before any byte is written to disk. If we
@@ -158,7 +158,7 @@ export default function SecurityPage() {
         title={<>Self-destructing share links.<RoadmapPill /></>}
       >
         <DocP>
-          At launch, justenv ships a share-link service that lets you send a
+          At launch, justenvs ships a share-link service that lets you send a
           secret (or a small bundle) to a teammate without ever exposing
           plaintext to our servers. The protocol:
         </DocP>
@@ -198,7 +198,7 @@ export default function SecurityPage() {
         title="Responsible disclosure."
       >
         <DocP>
-          Email <Code>security@justenv.app</Code>. We acknowledge new reports
+          Email <Code>security@justenvs.app</Code>. We acknowledge new reports
           within 72 hours and commit to a remediation plan within 14 days for
           confirmed issues.
         </DocP>
@@ -209,7 +209,7 @@ export default function SecurityPage() {
         </DocP>
         <DocP>
           PGP key:{" "}
-          <Code>https://justenv.app/.well-known/pgp.asc</Code>
+          <Code>https://justenvs.app/.well-known/pgp.asc</Code>
           {" "}<RoadmapPill />
         </DocP>
       </DocSection>

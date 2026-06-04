@@ -61,7 +61,7 @@ export function Logo({ size = 30, showWord = true }) {
             color: "var(--fg-primary)",
           }}
         >
-          justenv
+          justenvs
         </span>
       )}
     </span>

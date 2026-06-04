@@ -406,7 +406,7 @@ export default function Hero({ onSignup }) {
             marginTop: 24,
           }}
         >
-          <BigWord>justenv</BigWord>
+          <BigWord>justenvs</BigWord>
           <div
             style={{
               position: "relative",

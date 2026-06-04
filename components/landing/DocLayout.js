@@ -194,7 +194,7 @@ export default function DocLayout({
             color: "var(--fg-tertiary)",
           }}
         >
-          <span>© 2026 justenv, Inc.</span>
+          <span>© 2026 justenvs, Inc.</span>
           <Link
             href="/"
             style={{
@@ -206,7 +206,7 @@ export default function DocLayout({
             }}
           >
             <Icon name="arrow-left" size={12} />
-            justenv.app
+            justenvs.app
           </Link>
         </footer>
       </div>

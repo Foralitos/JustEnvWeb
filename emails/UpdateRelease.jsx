@@ -92,7 +92,7 @@ export default function UpdateRelease({
         <meta name="supported-color-schemes" content="dark" />
       </Head>
       <Preview>
-        JustEnv {version} is out &mdash; here&rsquo;s what changed.
+        JustEnvs {version} is out &mdash; here&rsquo;s what changed.
       </Preview>
       <Body
         style={{
@@ -158,7 +158,7 @@ export default function UpdateRelease({
                 margin: "0 0 18px",
               }}
             >
-              What&rsquo;s new in JustEnv.
+              What&rsquo;s new in JustEnvs.
             </Heading>
 
             <Text
@@ -256,7 +256,7 @@ export default function UpdateRelease({
                 letterSpacing: "-0.005em",
               }}
             >
-              &mdash; Fora, building JustEnv
+              &mdash; Fora, building JustEnvs
             </Text>
           </Section>
 
@@ -276,7 +276,7 @@ export default function UpdateRelease({
                 margin: 0,
               }}
             >
-              justenv &middot; macOS &middot; v{version} &middot;{" "}
+              justenvs &middot; macOS &middot; v{version} &middot;{" "}
               <Link
                 href={siteUrl}
                 style={{ color: colors.fgTertiary, textDecoration: "none" }}
@@ -293,7 +293,7 @@ export default function UpdateRelease({
                 lineHeight: 1.5,
               }}
             >
-              You&rsquo;re receiving this because you downloaded JustEnv from
+              You&rsquo;re receiving this because you downloaded JustEnvs from
               justenvs.app.
             </Text>
           </Section>

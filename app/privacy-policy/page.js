@@ -10,7 +10,7 @@ import {
 } from "@/components/landing/DocSection";
 
 export const metadata = getSEOTags({
-  title: "Privacy Policy · justenv",
+  title: "Privacy Policy · justenvs",
   canonicalUrlRelative: "/privacy-policy",
 });
 
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
         title="The short version."
       >
         <DocP>
-          justenv is built so we cannot read your secrets. The cryptographic
+          justenvs is built so we cannot read your secrets. The cryptographic
           details are on the{" "}
           <a href="/security" style={{ color: "var(--accent)" }}>
             Security page
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
         id="vault"
         number="02"
         eyebrow="Your vault"
-        title="What you store in justenv."
+        title="What you store in justenvs."
       >
         <DocP>
           The Mac app encrypts your vault locally with AES-256-GCM using a key
@@ -160,7 +160,7 @@ export default function PrivacyPage() {
         eyebrow="Who else touches the bytes"
         title="Sub-processors."
       >
-        <DocP>We use the following providers to run justenv:</DocP>
+        <DocP>We use the following providers to run justenvs:</DocP>
         <DocList>
           <li>
             <strong>Stripe</strong> — payment processing.
@@ -201,7 +201,7 @@ export default function PrivacyPage() {
           <li>Withdraw consent for analytics.</li>
         </DocList>
         <DocP>
-          To exercise any of these, email <Code>privacy@justenv.app</Code>. We
+          To exercise any of these, email <Code>privacy@justenvs.app</Code>. We
           respond within 20 business days, usually much faster.
         </DocP>
       </DocSection>
@@ -213,7 +213,7 @@ export default function PrivacyPage() {
         title="Cookies & analytics."
       >
         <DocP>
-          justenv.app sets a single first-party cookie to remember whether you
+          justenvs.app sets a single first-party cookie to remember whether you
           are signed in. No cross-site trackers. No advertising pixels. Vercel
           Analytics works without any cookie at all.
         </DocP>
@@ -226,9 +226,9 @@ export default function PrivacyPage() {
         title="Children."
       >
         <DocP>
-          justenv is for developers, not for children. We do not knowingly
+          justenvs is for developers, not for children. We do not knowingly
           accept accounts from anyone under 13. If you believe a minor has
-          created an account, email <Code>privacy@justenv.app</Code> and we will
+          created an account, email <Code>privacy@justenvs.app</Code> and we will
           delete it.
         </DocP>
       </DocSection>
@@ -255,7 +255,7 @@ export default function PrivacyPage() {
       >
         <DocP>
           Privacy questions or rights requests:{" "}
-          <Code>privacy@justenv.app</Code>.<br />
+          <Code>privacy@justenvs.app</Code>.<br />
           General support: <Code>elfora.dev@gmail.com</Code>.
         </DocP>
       </DocSection>

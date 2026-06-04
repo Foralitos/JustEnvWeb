@@ -1,6 +1,6 @@
 const config = {
   // REQUIRED
-  appName: "justenv",
+  appName: "justenvs",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Secure environment-variable storage and sharing for developer teams. Store your .env once, share it with your team, rotate it when you need to.",
@@ -70,9 +70,9 @@ const config = {
   },
   resend: {
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `justenv <noreply@justenvs.app>`,
+    fromNoReply: `justenvs <noreply@justenvs.app>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Fora at justenv <fora@justenvs.app>`,
+    fromAdmin: `Fora at justenvs <fora@justenvs.app>`,
     // Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
     supportEmail: "elfora.dev@gmail.com",
   },

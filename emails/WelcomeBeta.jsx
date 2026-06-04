@@ -117,7 +117,7 @@ export default function WelcomeBeta({
                 textShadow: "0 1px 12px rgba(0,0,0,0.5)",
               }}
             >
-              Thanks for downloading JustEnv. You&rsquo;re now part of a small
+              Thanks for downloading JustEnvs. You&rsquo;re now part of a small
               group helping shape the simplest way teams handle environment
               variables &mdash; secure, in one place, never in a DM.
             </Text>
@@ -133,7 +133,7 @@ export default function WelcomeBeta({
               }}
             >
               We&rsquo;re early, so things move fast. If something breaks, or
-              you can think of a tool you wish JustEnv talked to, just hit
+              you can think of a tool you wish JustEnvs talked to, just hit
               reply. The email goes straight to me.
             </Text>
 
@@ -197,7 +197,7 @@ export default function WelcomeBeta({
                 letterSpacing: "-0.005em",
               }}
             >
-              &mdash; Fora, building JustEnv
+              &mdash; Fora, building JustEnvs
             </Text>
           </Section>
 
@@ -218,7 +218,7 @@ export default function WelcomeBeta({
                 margin: 0,
               }}
             >
-              justenv &middot; macOS &middot; beta &middot; justenvs.app
+              justenvs &middot; macOS &middot; beta &middot; justenvs.app
             </Text>
             <Text
               style={{
@@ -229,7 +229,7 @@ export default function WelcomeBeta({
                 lineHeight: 1.5,
               }}
             >
-              You&rsquo;re receiving this because you downloaded JustEnv from
+              You&rsquo;re receiving this because you downloaded JustEnvs from
               justenvs.app.
             </Text>
           </Section>

@@ -10,7 +10,7 @@ import {
 } from "@/components/landing/DocSection";
 
 export const metadata = getSEOTags({
-  title: "Terms of Service · justenv",
+  title: "Terms of Service · justenvs",
   canonicalUrlRelative: "/tos",
 });
 
@@ -37,7 +37,7 @@ export default function TermsPage() {
       toc={TOC}
     >
       <TLDR>
-        We make the tool, you keep the secrets. Use justenv reasonably, pay for
+        We make the tool, you keep the secrets. Use justenvs reasonably, pay for
         what you use, and we will not snoop on your vault.
       </TLDR>
 
@@ -48,13 +48,13 @@ export default function TermsPage() {
         title="The basics."
       >
         <DocP>
-          These Terms govern your use of <Code>justenv</Code> — the macOS app,
+          These Terms govern your use of <Code>justenvs</Code> — the macOS app,
           the <Code>envsvault</Code> CLI, and any related services we run from{" "}
-          <Code>justenv.app</Code>. By installing the app, opening an account, or
+          <Code>justenvs.app</Code>. By installing the app, opening an account, or
           using the CLI, you accept these Terms.
         </DocP>
         <DocP>
-          justenv is operated by Elfora (&ldquo;we&rdquo;, &ldquo;us&rdquo;). You are the user (&ldquo;you&rdquo;).
+          justenvs is operated by Elfora (&ldquo;we&rdquo;, &ldquo;us&rdquo;). You are the user (&ldquo;you&rdquo;).
           We wrote these Terms in plain language because we use developer tools
           too and we hate legalese as much as you do.
         </DocP>
@@ -64,16 +64,16 @@ export default function TermsPage() {
         id="license"
         number="02"
         eyebrow="What you can do with it"
-        title="Your license to use justenv."
+        title="Your license to use justenvs."
       >
         <DocP>
           We grant you a personal, non-exclusive, non-transferable license to
-          install and use the justenv macOS app and the <Code>envsvault</Code>{" "}
+          install and use the justenvs macOS app and the <Code>envsvault</Code>{" "}
           CLI on devices you control.
         </DocP>
         <DocList>
           <li>
-            <strong>Free for solo developers.</strong> If you use justenv on
+            <strong>Free for solo developers.</strong> If you use justenvs on
             your own devices, the app is free, forever. No card required.
           </li>
           <li>
@@ -95,7 +95,7 @@ export default function TermsPage() {
         title="Your data, your secrets."
       >
         <DocP>
-          Anything you put inside justenv — environment variables, project
+          Anything you put inside justenvs — environment variables, project
           names, notes — is <strong>yours</strong>. You can export, modify, or
           delete it at any time from the app.
         </DocP>
@@ -111,7 +111,7 @@ export default function TermsPage() {
         </DocP>
         <DocP>
           You are responsible for what you store. Do not put secrets that are
-          not yours to store, and do not use justenv as a way to bypass the
+          not yours to store, and do not use justenvs as a way to bypass the
           security controls of services you do not own.
         </DocP>
       </DocSection>
@@ -150,7 +150,7 @@ export default function TermsPage() {
         eyebrow="Don't be that person"
         title="Acceptable use."
       >
-        <DocP>While using justenv, you agree not to:</DocP>
+        <DocP>While using justenvs, you agree not to:</DocP>
         <DocList>
           <li>Store content that is illegal, infringes someone else’s rights, or violates export control law.</li>
           <li>Abuse the share-link service <RoadmapPill /> (we apply rate limits and may block obvious automated abuse).</li>
@@ -166,7 +166,7 @@ export default function TermsPage() {
         title="Termination."
       >
         <DocP>
-          You can stop using justenv at any time. Your local vault stays on
+          You can stop using justenvs at any time. Your local vault stays on
           your Mac — uninstalling the app does not delete the file at{" "}
           <Code>~/Library/Application Support/JustEnv/vault.json</Code>; remove
           it yourself if you want a clean slate.
@@ -185,7 +185,7 @@ export default function TermsPage() {
         title="No warranty, limited liability."
       >
         <DocP>
-          justenv is provided <em>as is</em>, without warranty of any kind. We
+          justenvs is provided <em>as is</em>, without warranty of any kind. We
           do our best to keep the app stable, the cryptography sound, and the
           servers up, but we can’t guarantee it works without interruption.
         </DocP>
@@ -225,7 +225,7 @@ export default function TermsPage() {
         </DocP>
         <DocP>
           Before filing anything, please email{" "}
-          <Code>legal@justenv.app</Code>. We will respond within 10 business
+          <Code>legal@justenvs.app</Code>. We will respond within 10 business
           days and try to resolve the issue without paper.
         </DocP>
       </DocSection>
@@ -237,7 +237,7 @@ export default function TermsPage() {
         title="Contact."
       >
         <DocP>
-          Questions about these Terms: <Code>legal@justenv.app</Code>.<br />
+          Questions about these Terms: <Code>legal@justenvs.app</Code>.<br />
           Anything else: <Code>elfora.dev@gmail.com</Code>.
         </DocP>
       </DocSection>

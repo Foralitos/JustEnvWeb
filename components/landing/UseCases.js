@@ -112,7 +112,7 @@ export default function UseCases() {
             Built for the secrets you actually handle.
           </h2>
           <p className="ds-body-lg" style={{ margin: 0 }}>
-            From a solo side-project to a quick handoff — justenv keeps your
+            From a solo side-project to a quick handoff — justenvs keeps your
             secrets in one place and shares them without leaving a trail.
           </p>
         </div>

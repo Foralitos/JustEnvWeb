@@ -349,7 +349,7 @@ export default function SharePage({ params }) {
             letterSpacing: "0.02em",
           }}
         >
-          justenv · the server never read this payload
+          justenvs · the server never read this payload
         </footer>
       </div>
     </main>

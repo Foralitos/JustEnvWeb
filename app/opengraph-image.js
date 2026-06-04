@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "justenv — Your environment variables, finally in one safe place.";
+export const alt = "justenvs — Your environment variables, finally in one safe place.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -99,7 +99,7 @@ export default async function OpenGraphImage() {
               letterSpacing: "-1.2px",
             }}
           >
-            justenv
+            justenvs
           </div>
           <div
             style={{

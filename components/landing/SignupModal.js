@@ -87,7 +87,7 @@ export default function SignupModal({ open, onClose }) {
             fontSize: "clamp(22px, 6vw, 28px)",
           }}
         >
-          Download justenv
+          Download justenvs
         </h3>
         <p
           className="ds-body-sm"

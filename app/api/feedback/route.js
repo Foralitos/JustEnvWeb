@@ -61,7 +61,7 @@ export async function POST(req) {
         text: `${message}\n\n— from ${email}`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0E1013;">
-            <p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #28C075;">New feedback · justenv</p>
+            <p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #28C075;">New feedback · justenvs</p>
             <blockquote style="margin: 0 0 20px; padding: 16px 18px; background: #F8F9FA; border-left: 3px solid #38E08A; border-radius: 6px; font-size: 15px; line-height: 1.55;">
               ${safeMessage}
             </blockquote>

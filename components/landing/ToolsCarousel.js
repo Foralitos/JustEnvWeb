@@ -176,7 +176,7 @@ export default function ToolsCarousel() {
           >
             .env
           </code>
-          , justenv works with it. Store them locally in the app, share them
+          , justenvs works with it. Store them locally in the app, share them
           with encrypted links when you need to hand off.
         </p>
       </div>

@@ -5,7 +5,7 @@ import { getSEOTags } from "@/libs/seo";
 // ClientLayout chrome that wraps the rest of the site.
 
 export const metadata = getSEOTags({
-  title: "Self-destructing share — JustEnv",
+  title: "Self-destructing share — JustEnvs",
   description:
     "Encrypted environment variables shared via a single-use link. Decrypted in your browser; the server never sees the contents.",
   robots: { index: false, follow: false },
