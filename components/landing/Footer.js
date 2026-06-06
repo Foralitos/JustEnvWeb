@@ -283,6 +283,7 @@ export default function Footer({ onSignup }) {
               flexWrap: "wrap",
             }}
           >
+            <BarLink href="/share">Share</BarLink>
             <BarLink href="/tos">Terms</BarLink>
             <BarLink href="/privacy-policy">Privacy</BarLink>
             <BarLink href="/security">Security</BarLink>
