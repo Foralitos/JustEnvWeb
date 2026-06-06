@@ -3,7 +3,7 @@ const config = {
   appName: "justenvs",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Secure environment-variable storage and sharing for developer teams. Store your .env once, share it with your team, rotate it when you need to.",
+    "JustEnvs is a Mac app to store, manage and share environment variables securely. Keep your .env files encrypted in one place, share with self-destructing links.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "justenvs.app",
   crisp: {

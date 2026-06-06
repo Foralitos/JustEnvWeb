@@ -80,15 +80,12 @@ const Footer = () => {
                     Support
                   </a>
                 )}
-                <Link href="/#pricing" className="no-underline hover:underline">
-                  Pricing
+                <Link href="/security" className="no-underline hover:underline">
+                  Security
                 </Link>
-                <Link href="/blog" className="no-underline hover:underline">
-                  Blog
+                <Link href="/changelog" className="no-underline hover:underline">
+                  Changelog
                 </Link>
-                <a href="/#" target="_blank" className="no-underline hover:underline">
-                  Affiliates
-                </a>
               </div>
             </div>
 
