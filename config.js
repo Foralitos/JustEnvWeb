@@ -13,51 +13,27 @@ const config = {
     onlyShowOnRoutes: ["/"],
   },
   stripe: {
-    // Create multiple plans in your Stripe dashboard, then add them here. You can add as many plans as you want, just make sure to add the priceId
+    // Single one-time "Pro" plan. The webhook (app/api/webhook/stripe/route.js)
+    // matches the priceId from Stripe against this list to grant hasAccess, so
+    // the priceId MUST match the live/test price exactly. We read it from an env
+    // var (STRIPE_PRICE_PRO) so the same code works in test (.env.local) and
+    // live (Vercel) — set the matching price id in each environment.
     plans: [
       {
-        // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-        priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
-            : "price_456",
-        //  REQUIRED - Name of the plan, displayed on the pricing page
-        name: "Starter",
-        // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
-        // The price you want to display, the one user will be charged on Stripe.
-        price: 79,
-        // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 99,
-        features: [
-          {
-            name: "NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-        ],
-      },
-      {
-        // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
+        // REQUIRED — used by the webhook to find the plan and grant access.
+        priceId: process.env.STRIPE_PRICE_PRO,
+        // One-time payment (not a subscription).
+        mode: "payment",
+        name: "JustEnvs Pro",
+        description: "Lifetime access — unlimited projects",
+        // Display price (USD). The real charge is whatever the Stripe price is.
+        price: 50,
         isFeatured: true,
-        priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1O5KtcAxyNprDp7iftKnrrpw"
-            : "price_456",
-        name: "Advanced",
-        description: "You need more power",
-        price: 99,
-        priceAnchor: 149,
         features: [
-          {
-            name: "NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
-          { name: "24/7 support" },
+          { name: "Unlimited projects" },
+          { name: "Everything in Free" },
+          { name: "One-time payment, no subscription" },
+          { name: "All future Pro features" },
         ],
       },
     ],
