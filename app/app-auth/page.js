@@ -14,13 +14,15 @@ export const metadata = {
 // hand it back to the app via the justenv:// deeplink (done client-side).
 export default async function AppAuthPage({ searchParams }) {
   const session = await auth();
-
-  if (!session?.user?.id) {
-    redirect("/api/auth/signin?callbackUrl=/app-auth");
-  }
-
   const sp = await searchParams;
   const state = typeof sp?.state === "string" ? sp.state : "";
+
+  if (!session?.user?.id) {
+    // Preserve `state` through the NextAuth login round-trip so it survives
+    // back to the deeplink (the app validates it best-effort).
+    const cb = state ? `/app-auth?state=${encodeURIComponent(state)}` : "/app-auth";
+    redirect(`/api/auth/signin?callbackUrl=${encodeURIComponent(cb)}`);
+  }
 
   const token = await signAppToken({
     userId: session.user.id,

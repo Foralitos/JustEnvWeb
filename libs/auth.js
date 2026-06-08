@@ -8,6 +8,7 @@ import connectMongoose from "./mongoose"
 import User from "@/models/User"
 import Lead from "@/models/Lead"
 import { sendWelcomeEmail } from "./sendWelcome"
+import { sendMagicLinkEmail } from "./sendMagicLink"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   
@@ -30,6 +31,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
               },
             },
             from: config.resend.fromNoReply,
+            // Override the default white NextAuth email with our branded one.
+            sendVerificationRequest: async ({ identifier, url }) => {
+              await sendMagicLinkEmail({ to: identifier, url });
+            },
           }),
           GoogleProvider({
             // Follow the "Login with Google" tutorial to get your credentials
@@ -147,6 +152,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   
   session: {
     strategy: "jwt",
+  },
+  // Branded auth pages (replace NextAuth's default white screens).
+  pages: {
+    signIn: "/signin",
+    signOut: "/signout",
   },
   theme: {
     brandColor: config.colors.main,
