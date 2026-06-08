@@ -15,13 +15,12 @@ const config = {
   stripe: {
     // Single one-time "Pro" plan. The webhook (app/api/webhook/stripe/route.js)
     // matches the priceId from Stripe against this list to grant hasAccess, so
-    // the priceId MUST match the live/test price exactly. We read it from an env
-    // var (STRIPE_PRICE_PRO) so the same code works in test (.env.local) and
-    // live (Vercel) — set the matching price id in each environment.
+    // the priceId MUST be the live Stripe *price* id (price_…, not the prod_…
+    // product id) and match exactly.
     plans: [
       {
         // REQUIRED — used by the webhook to find the plan and grant access.
-        priceId: "prod_UfBs3DCzsiImgc",
+        priceId: "price_1TfrV6BHQDrHBQ2JM2aZ6lLL",
         // One-time payment (not a subscription).
         mode: "payment",
         name: "JustEnvs Pro",
