@@ -9,6 +9,26 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "2.1.0",
+    date: "Jun 7, 2026",
+    tagline: "Accounts, JustEnv Pro, and project renaming.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Sign in to a JustEnv account from Settings or the sidebar — with Google or a magic link — to unlock JustEnv Pro.",
+      },
+      {
+        kind: "Added",
+        text: "JustEnv Pro: unlimited projects. The free plan stays at 5 projects per vault.",
+      },
+      {
+        kind: "Added",
+        text: "Rename projects: right-click a project in the sidebar or grid, or use the toolbar in the project view.",
+      },
+    ],
+  },
+  {
     version: "2.0.0",
     date: "Jun 4, 2026",
     tagline: "Menu bar app, Touch ID rework, new foundation.",
