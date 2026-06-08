@@ -6,6 +6,8 @@ import config from "@/config"
 import connectMongo from "./mongo"
 import connectMongoose from "./mongoose"
 import User from "@/models/User"
+import Lead from "@/models/Lead"
+import { sendWelcomeEmail } from "./sendWelcome"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   
@@ -110,16 +112,36 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   
   events: {
+    // Fires once, when the adapter creates a new user (Google or magic link).
+    // We use it to: (1) seed role + hasAccess defaults (the MongoDB adapter
+    // doesn't run Mongoose schema defaults), (2) mirror the user into the Lead
+    // collection, and (3) send the one-time welcome email. Best-effort — a
+    // failure here must not block sign-in.
     async createUser({ user }) {
-      // Ensure all newly created users have a role
-      if (!user.role) {
+      try {
+        await connectMongoose();
+        await User.findByIdAndUpdate(user.id, {
+          role: "user",
+          hasAccess: false,
+        });
+      } catch (error) {
+        console.error("Error seeding defaults for new user:", error);
+      }
+
+      if (user.email) {
         try {
           await connectMongoose();
-          await User.findByIdAndUpdate(user.id, { role: "user" });
+          await Lead.updateOne(
+            { email: user.email },
+            { $setOnInsert: { email: user.email } },
+            { upsert: true }
+          );
         } catch (error) {
-          console.error("Error setting default role for new user:", error);
+          console.error("Error upserting lead for new user:", error);
         }
       }
+
+      await sendWelcomeEmail(user.email);
     },
   },
   

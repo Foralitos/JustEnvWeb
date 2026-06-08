@@ -1,15 +1,14 @@
 import { NextResponse } from "next/server";
-import { render } from "@react-email/render";
 import connectMongo from "@/libs/mongoose";
 import Lead from "@/models/Lead";
-import { sendEmail } from "@/libs/resend";
-import config from "@/config";
-import WelcomeBeta from "@/emails/WelcomeBeta";
+import { sendWelcomeEmail } from "@/libs/sendWelcome";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// This route stores leads captured from the landing page download modal.
-// New leads also get a one-time welcome email; repeat downloaders skip it.
+// Legacy lead-capture route (still used by the <ButtonLead /> component).
+// The Download modal now goes through auth, which creates the lead + user and
+// sends the welcome email in the NextAuth createUser event instead.
+// New leads still get a one-time welcome email; repeat submitters skip it.
 export async function POST(req) {
   await connectMongo();
 
@@ -27,34 +26,7 @@ export async function POST(req) {
     const existing = await Lead.findOne({ email });
     if (!existing) {
       await Lead.create({ email });
-
-      try {
-        const siteUrl = `https://${config.domainName}`;
-        const html = await render(
-          <WelcomeBeta
-            heroUrl={`${siteUrl}/email/welcome-hero.png`}
-            dmgUrl={config.download.dmgUrl}
-            siteUrl={siteUrl}
-          />
-        );
-        await sendEmail({
-          to: email,
-          subject: "Welcome to the JustEnvs beta",
-          text: [
-            "Thanks for downloading JustEnvs. You're now part of a small group helping shape the simplest way teams handle environment variables — secure, in one place, never in a DM.",
-            "",
-            "We're early, so things move fast. If something breaks, or you can think of a tool you wish JustEnvs talked to, just hit reply. The email goes straight to me.",
-            "",
-            `Re-download the Mac app: ${config.download.dmgUrl}`,
-            `Visit: ${siteUrl}`,
-            "",
-            "— Fora, building JustEnvs",
-          ].join("\n"),
-          html,
-        });
-      } catch (e) {
-        console.error("Welcome email failed:", e);
-      }
+      await sendWelcomeEmail(email);
     }
     return NextResponse.json({});
   } catch (e) {
