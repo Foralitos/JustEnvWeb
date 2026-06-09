@@ -20,7 +20,7 @@ const config = {
     plans: [
       {
         // REQUIRED — used by the webhook to find the plan and grant access.
-        priceId: "price_1TfrV6BHQDrHBQ2JM2aZ6lLL",
+        priceId: "price_1TgHHfBHQDrHBQ2J6HDnRgQN",
         // One-time payment (not a subscription).
         mode: "payment",
         name: "JustEnvs Pro",
