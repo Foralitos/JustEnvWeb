@@ -153,7 +153,7 @@ export default function Pricing({ onSignup }) {
             name="Pro"
             badge="LIFETIME"
             blurb="For developers who live in their .env files."
-            price="$50"
+            price="$20"
             unit="USD"
             cadence="one-time · pay once, keep forever"
             features={PRO_FEATURES}
