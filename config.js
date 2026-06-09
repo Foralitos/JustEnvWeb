@@ -26,7 +26,7 @@ const config = {
         name: "JustEnvs Pro",
         description: "Lifetime access — unlimited projects",
         // Display price (USD). The real charge is whatever the Stripe price is.
-        price: 50,
+        price: 20,
         isFeatured: true,
         features: [
           { name: "Unlimited projects" },
