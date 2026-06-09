@@ -15,6 +15,7 @@ const FREE_FEATURES = [
 const PRO_FEATURES = [
   "Unlimited projects",
   "Everything in Free",
+  "Two-way .env file sync",
   "One-time payment — no subscription",
   "All future Pro features included",
 ];

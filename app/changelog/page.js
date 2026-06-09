@@ -9,6 +9,26 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "2.2.0",
+    date: "Jun 8, 2026",
+    tagline: "Two-way .env file sync, for JustEnv Pro.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Link a project to a folder and sync its .env both ways — import what's on disk into your vault, or export your vault back out to the file. Pro only.",
+      },
+      {
+        kind: "Added",
+        text: "JustEnv now notices when a linked .env changes outside the app and shows you a per-variable diff before you pull anything in.",
+      },
+      {
+        kind: "Improved",
+        text: "Add variables faster: paste a whole .env and it expands into editable key/value rows.",
+      },
+    ],
+  },
+  {
     version: "2.1.0",
     date: "Jun 7, 2026",
     tagline: "Accounts, JustEnv Pro, and project renaming.",

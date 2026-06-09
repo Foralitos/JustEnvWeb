@@ -51,6 +51,11 @@ export default function UseCases() {
       body: "Keep production, staging and preview separate inside the app. Switch contexts without copy-paste.",
     },
     {
+      icon: "refresh-cw",
+      title: "Sync with your repo",
+      body: "Link a project to a folder and pull or push its .env in one click. justenvs catches edits made outside the app and shows you a diff before anything lands in your vault.",
+    },
+    {
       icon: "shield-check",
       title: "End-to-end encryption",
       body: "Secrets are sealed on your device before they leave it. We never see plaintext.",
@@ -58,12 +63,7 @@ export default function UseCases() {
     {
       icon: "timer",
       title: "Self-destructing shares",
-      body: "Pick a TTL — 1 hour, 1 day, or 7 days — and a view counter. Links delete themselves when used up.",
-    },
-    {
-      icon: "flame",
-      title: "Burn-after-read",
-      body: "Mark a share so it dies the moment someone opens it. No second chances, no leaked links in DMs.",
+      body: "Pick a TTL — 1 hour, 1 day, or 7 days — and a view counter, or burn-after-read so the link dies the moment it's opened. Either way it deletes itself; nothing lingers in a DM.",
     },
     {
       icon: "monitor",
