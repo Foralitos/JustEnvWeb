@@ -9,6 +9,22 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "2.3.0",
+    date: "Jun 9, 2026",
+    tagline: "Check for updates anytime, and a share-link fix.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Check for Updates on demand — a new button in Settings and in the sidebar pulls the latest version without waiting for the automatic background check.",
+      },
+      {
+        kind: "Fixed",
+        text: "Creating a share link could fail with \"Could not parse server response\" on some macOS versions. Sharing now works everywhere.",
+      },
+    ],
+  },
+  {
     version: "2.2.0",
     date: "Jun 8, 2026",
     tagline: "Two-way .env file sync, for JustEnv Pro.",

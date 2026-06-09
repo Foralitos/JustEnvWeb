@@ -60,5 +60,13 @@
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure url="https://github.com/Foralitos/justenv-releases/releases/download/v2.2.0/JustEnv.dmg" type="application/octet-stream" sparkle:edSignature="mqLqd+LltBML4ndGTD74Ar/3CweYx82gYuvpOZw093PxqR8AX0btFdYMT97nTCAkqTBZpwn2XLF5+BrG1qH+AA==" length="1944114" />
     </item>
+    <item>
+      <title>Version 2.3.0</title>
+      <pubDate>Tue, 09 Jun 2026 14:32:51 -0600</pubDate>
+      <sparkle:version>202606091431</sparkle:version>
+      <sparkle:shortVersionString>2.3.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/Foralitos/justenv-releases/releases/download/v2.3.0/JustEnv.dmg" type="application/octet-stream" sparkle:edSignature="aalQ5nx0isAglDIrr4jtoS4BjFz5kHaQgZFsF7m9hx9VoMiMc28+lmP2nCa2kN5Vvf1EipKzpseIoiiMMVznDQ==" length="1953476" />
+    </item>
   </channel>
 </rss>
