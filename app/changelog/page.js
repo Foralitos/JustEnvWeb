@@ -9,6 +9,30 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "2.5.0",
+    date: "Jun 10, 2026",
+    tagline: "A premium redesign — same JustEnv, finally looking the part.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Improved",
+        text: "A complete visual refresh that brings the app in line with the website: a refined light and dark theme, cleaner typography, and subtle depth throughout. Nothing moved — everything just looks sharper.",
+      },
+      {
+        kind: "Improved",
+        text: "A seamless window with a transparent titlebar you can drag from anywhere, a calmer two-tone sidebar, and pill-style selection.",
+      },
+      {
+        kind: "Improved",
+        text: "Polished details everywhere: hover feedback on cards and rows, a green checkmark when you copy a value, a floating confirmation toast, and a soft brand glow on the welcome and unlock screens.",
+      },
+      {
+        kind: "Improved",
+        text: "Variable values now use a monospace font while the rest of the interface uses a clean system typeface, so keys and secrets are easy to read at a glance.",
+      },
+    ],
+  },
+  {
     version: "2.4.0",
     date: "Jun 9, 2026",
     tagline: "Bulletproof .env sync, and JustEnv lives in your menu bar.",
