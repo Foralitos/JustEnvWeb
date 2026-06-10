@@ -9,6 +9,38 @@ export const metadata = getSEOTags({
 
 const RELEASES = [
   {
+    version: "2.4.0",
+    date: "Jun 9, 2026",
+    tagline: "Bulletproof .env sync, and JustEnv lives in your menu bar.",
+    status: "shipped",
+    notes: [
+      {
+        kind: "Added",
+        text: "Live sync: JustEnv now watches your linked folder, so edits to the .env from your editor or terminal show up instantly — no need to refocus the app. Pro only.",
+      },
+      {
+        kind: "Added",
+        text: "Leak guard: when you link or export to a folder, JustEnv makes sure .env* is in that folder's .gitignore — automatically, so secrets never end up in a commit. Pro only.",
+      },
+      {
+        kind: "Improved",
+        text: "Links survive renames: rename an environment, or rename the file itself (.env → .env.local), and the folder link follows along instead of silently breaking. Pro only.",
+      },
+      {
+        kind: "Improved",
+        text: "If a linked folder or file goes missing, you now get a recovery banner with one-click options to re-link — no more silent failures. Pro only.",
+      },
+      {
+        kind: "Improved",
+        text: "JustEnv now behaves like a true menu bar app: closing the window or pressing Cmd+Q tucks it into the menu bar instead of quitting. Really quit with Cmd+Opt+Q or the power button in the popup.",
+      },
+      {
+        kind: "Fixed",
+        text: "\"Open app\" from the menu bar popup now correctly restores a minimized window.",
+      },
+    ],
+  },
+  {
     version: "2.3.0",
     date: "Jun 9, 2026",
     tagline: "Check for updates anytime, and a share-link fix.",
