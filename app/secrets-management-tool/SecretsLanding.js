@@ -49,7 +49,7 @@ const PLATFORM_ROWS = [
   },
   {
     feature: "Pricing model",
-    justenvs: "$50 one-time, free for solo devs",
+    justenvs: "$20 one-time, free for solo devs",
     competitor: "Per-seat, per-month",
   },
   {

@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Is JustEnvs free?",
-    a: "Free for solo developers with up to 5 projects, including encrypted storage and one-time share links. Pro is a $50 one-time purchase — lifetime, unlimited projects, no subscription.",
+    a: "Free for solo developers with up to 5 projects, including encrypted storage and one-time share links. Pro is a $20 one-time purchase — lifetime, unlimited projects, no subscription.",
   },
   {
     q: "How is JustEnvs different from Doppler or HashiCorp Vault?",

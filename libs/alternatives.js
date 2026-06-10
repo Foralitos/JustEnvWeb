@@ -10,13 +10,13 @@ export const ALTERNATIVES = [
     name: "Doppler",
     title: "Doppler Alternative for Mac Developers (2026)",
     metaDescription:
-      "Looking for a Doppler alternative? JustEnvs is a native Mac app for .env files — end-to-end encrypted, one-time $50, free for solo devs. No cloud platform to babysit.",
+      "Looking for a Doppler alternative? JustEnvs is a native Mac app for .env files — end-to-end encrypted, one-time $20, free for solo devs. No cloud platform to babysit.",
     tagline:
       "Doppler is a cloud secrets platform built for teams syncing configs across many environments. JustEnvs is a native Mac app for developers who just want their .env files stored, encrypted, and shareable.",
     segment: "Cloud secrets-management platform for teams",
     pricing: {
       competitor: "Free up to 3 users, then per-seat monthly (Team tier), Enterprise custom",
-      justenvs: "Free for solo devs (5 projects) · $50 one-time for Pro, lifetime",
+      justenvs: "Free for solo devs (5 projects) · $20 one-time for Pro, lifetime",
     },
     intro: [
       "Doppler earned its place. If your team runs dozens of services across dev, staging, and production, Doppler's centralized dashboard, environment branching, and CI/CD integrations genuinely solve the config-drift problem. It syncs secrets into Kubernetes, Vercel, GitHub Actions, and just about anything else with an API.",
@@ -27,7 +27,7 @@ export const ALTERNATIVES = [
       { feature: "Native Mac app", justenvs: "Yes — built for macOS", competitor: "No — web dashboard + CLI" },
       { feature: "Encryption model", justenvs: "End-to-end, zero-knowledge", competitor: "Server-side (Doppler can decrypt)" },
       { feature: "One-time secret links", justenvs: "Built in — burn after reading", competitor: "Not a feature" },
-      { feature: "Pricing", justenvs: "$50 one-time, free for solo devs", competitor: "Per-seat monthly after 3 users" },
+      { feature: "Pricing", justenvs: "$20 one-time, free for solo devs", competitor: "Per-seat monthly after 3 users" },
       { feature: "Runtime injection / CI sync", justenvs: "No — store and share, not inject", competitor: "Yes — CLI, agents, integrations" },
       { feature: "Works offline", justenvs: "Yes — local-first vault", competitor: "No — cloud service" },
     ],
@@ -56,7 +56,7 @@ export const ALTERNATIVES = [
       },
       {
         title: "One price, not a subscription",
-        body: "Free for solo devs, $50 once for Pro. No per-seat math, no monthly line item for storing text files.",
+        body: "Free for solo devs, $20 once for Pro. No per-seat math, no monthly line item for storing text files.",
       },
       {
         title: "Sharing that self-destructs",
@@ -70,11 +70,11 @@ export const ALTERNATIVES = [
       },
       {
         q: "Why switch from Doppler to JustEnvs?",
-        a: "Three common reasons: you want a native Mac app instead of a web dashboard, you want zero-knowledge encryption where the vendor can't read your secrets, or you're tired of per-seat monthly pricing for what is, for you, a single-player tool. JustEnvs is free for solo devs and $50 one-time for Pro.",
+        a: "Three common reasons: you want a native Mac app instead of a web dashboard, you want zero-knowledge encryption where the vendor can't read your secrets, or you're tired of per-seat monthly pricing for what is, for you, a single-player tool. JustEnvs is free for solo devs and $20 one-time for Pro.",
       },
       {
         q: "Does Doppler have a free plan?",
-        a: "Yes — Doppler's Developer plan is free for up to 3 users, with paid per-seat tiers above that (as of 2026). JustEnvs is free for solo developers with up to 5 projects, and Pro is a $50 one-time purchase with unlimited projects.",
+        a: "Yes — Doppler's Developer plan is free for up to 3 users, with paid per-seat tiers above that (as of 2026). JustEnvs is free for solo developers with up to 5 projects, and Pro is a $20 one-time purchase with unlimited projects.",
       },
       {
         q: "Can JustEnvs sync secrets to CI/CD like Doppler?",
@@ -93,13 +93,13 @@ export const ALTERNATIVES = [
     name: "Infisical",
     title: "Infisical Alternative for Mac Developers (2026)",
     metaDescription:
-      "Looking for an Infisical alternative? JustEnvs is a native Mac app for .env files — zero-knowledge by default, no server to self-host, $50 one-time. Free for solo devs.",
+      "Looking for an Infisical alternative? JustEnvs is a native Mac app for .env files — zero-knowledge by default, no server to self-host, $20 one-time. Free for solo devs.",
     tagline:
       "Infisical is an open-source secrets platform you can self-host, aimed at teams managing secrets across infrastructure. JustEnvs is a native Mac app with nothing to deploy — your vault lives on your machine.",
     segment: "Open-source secrets-management platform (cloud or self-hosted)",
     pricing: {
       competitor: "Free up to 5 identities, then Pro per-identity monthly (~$18)",
-      justenvs: "Free for solo devs (5 projects) · $50 one-time for Pro, lifetime",
+      justenvs: "Free for solo devs (5 projects) · $20 one-time for Pro, lifetime",
     },
     intro: [
       "Infisical is probably the most interesting player in the secrets space: open source, self-hostable, with secret scanning, rotation, and even free one-time secret sharing bundled into the platform. If your org wants an auditable, self-hosted alternative to enterprise secrets managers, Infisical is a serious choice.",
@@ -111,7 +111,7 @@ export const ALTERNATIVES = [
       { feature: "Anything to deploy or operate", justenvs: "Nothing — local-first app", competitor: "Self-host server, or use their cloud" },
       { feature: "Zero-knowledge encryption", justenvs: "Always — encrypted on your Mac", competitor: "Depends on deployment and configuration" },
       { feature: "One-time secret links", justenvs: "Built in, .env-aware", competitor: "Yes — web-based secret sharing" },
-      { feature: "Pricing", justenvs: "$50 one-time, free for solo devs", competitor: "Per-identity monthly after free tier" },
+      { feature: "Pricing", justenvs: "$20 one-time, free for solo devs", competitor: "Per-identity monthly after free tier" },
       { feature: "Secret rotation / scanning", justenvs: "No", competitor: "Yes — platform features" },
     ],
     whereTheyWin: [
@@ -149,7 +149,7 @@ export const ALTERNATIVES = [
     faqs: [
       {
         q: "Isn't Infisical free and open source? Why pay for JustEnvs?",
-        a: "Infisical's code is open source, but using it means either trusting their cloud (free up to 5 identities, then per-identity pricing as of 2026) or running the server yourself — which costs time and infrastructure. JustEnvs is free for solo devs, and Pro is $50 once. You're paying for a polished native app and zero operations, not for the idea of secrets management.",
+        a: "Infisical's code is open source, but using it means either trusting their cloud (free up to 5 identities, then per-identity pricing as of 2026) or running the server yourself — which costs time and infrastructure. JustEnvs is free for solo devs, and Pro is $20 once. You're paying for a polished native app and zero operations, not for the idea of secrets management.",
       },
       {
         q: "Infisical already has one-time secret sharing. How is JustEnvs different?",
@@ -176,18 +176,18 @@ export const ALTERNATIVES = [
     name: "dotenv-vault",
     title: "dotenv-vault Alternative for Mac Developers (2026)",
     metaDescription:
-      "dotenv-vault's free tier is gone and the project moved to dotenvx. JustEnvs is the alternative: a native Mac app for .env files, still free for solo devs, $50 one-time.",
+      "dotenv-vault's free tier is gone and the project moved to dotenvx. JustEnvs is the alternative: a native Mac app for .env files, still free for solo devs, $20 one-time.",
     tagline:
       "dotenv-vault — from the creator of dotenv — pioneered encrypt-and-commit .env workflows, but the project has shifted to dotenvx and the free tier was discontinued in 2025. JustEnvs picks up where it left off for Mac developers.",
     segment: "CLI-based .env encryption (now dotenvx, paid Armor tiers)",
     pricing: {
       competitor: "dotenvx CLI is OSS; hosted features moved to paid Armor plans (free tier discontinued in 2025)",
-      justenvs: "Free for solo devs (5 projects) · $50 one-time for Pro, lifetime",
+      justenvs: "Free for solo devs (5 projects) · $20 one-time for Pro, lifetime",
     },
     intro: [
       "If you're searching for a dotenv-vault alternative, chances are you were a user — and then the ground moved. The creator of dotenv refocused the project into dotenvx, an encrypt-your-.env-and-commit-it CLI, and the hosted free tier that made dotenv-vault attractive was discontinued in 2025. What's left is an open-source CLI plus paid \"Armor\" tiers for the managed features.",
       "The encrypt-and-commit model itself is clever: your encrypted .env travels with the repo, and a private key decrypts it locally. But it's CLI-only, per-repository, and the workflow lives in git — there's no place where you can see all your projects' secrets, and nothing built in for handing a secret to another person.",
-      "JustEnvs takes the same core conviction — .env files deserve real tooling — and builds it as a native Mac app instead of a CLI. Your projects sit in one encrypted vault, organized and searchable, with Touch ID instead of key files, and one-time self-destructing links for the moments you need to share. And the part that stings about dotenv-vault's pivot doesn't apply here: JustEnvs is free for solo developers, with Pro as a $50 one-time purchase — no subscription to discontinue.",
+      "JustEnvs takes the same core conviction — .env files deserve real tooling — and builds it as a native Mac app instead of a CLI. Your projects sit in one encrypted vault, organized and searchable, with Touch ID instead of key files, and one-time self-destructing links for the moments you need to share. And the part that stings about dotenv-vault's pivot doesn't apply here: JustEnvs is free for solo developers, with Pro as a $20 one-time purchase — no subscription to discontinue.",
     ],
     compareRows: [
       { feature: "Interface", justenvs: "Native Mac app", competitor: "CLI only" },
@@ -195,7 +195,7 @@ export const ALTERNATIVES = [
       { feature: "All projects in one place", justenvs: "Yes — vault organized by project", competitor: "No — per-repo encrypted files" },
       { feature: "Share with another person", justenvs: "One-time self-destructing links", competitor: "Not built in — share keys manually" },
       { feature: "Encryption", justenvs: "Local AES-GCM, zero-knowledge shares", competitor: "Public-key encrypt-and-commit" },
-      { feature: "Pricing", justenvs: "$50 one-time", competitor: "OSS CLI + paid Armor subscription tiers" },
+      { feature: "Pricing", justenvs: "$20 one-time", competitor: "OSS CLI + paid Armor subscription tiers" },
     ],
     whereTheyWin: [
       {
@@ -226,7 +226,7 @@ export const ALTERNATIVES = [
       },
       {
         title: "No subscription risk",
-        body: "Pro is $50 once, lifetime. A one-time purchase can't pull a free-tier rug.",
+        body: "Pro is $20 once, lifetime. A one-time purchase can't pull a free-tier rug.",
       },
     ],
     faqs: [
@@ -265,7 +265,7 @@ export const ALTERNATIVES = [
     segment: "Web-based one-time secret sharing",
     pricing: {
       competitor: "Free; paid Identity plan (flat monthly) for custom domains",
-      justenvs: "Free for solo devs (5 projects) · $50 one-time for Pro, lifetime",
+      justenvs: "Free for solo devs (5 projects) · $20 one-time for Pro, lifetime",
     },
     intro: [
       "OneTimeSecret deserves credit for defining the category: a dead-simple web page where you paste a secret and get a link that works once. It's open source, it's free, and for sending your aunt a Wi-Fi password it's exactly the right amount of tool.",
@@ -327,7 +327,7 @@ export const ALTERNATIVES = [
       },
       {
         q: "Is JustEnvs free like OneTimeSecret?",
-        a: "For solo developers, yes — free with up to 5 projects, including one-time share links. Pro is a $50 one-time purchase for unlimited projects. OneTimeSecret is free with a flat-fee paid plan for custom domains (as of 2026).",
+        a: "For solo developers, yes — free with up to 5 projects, including one-time share links. Pro is a $20 one-time purchase for unlimited projects. OneTimeSecret is free with a flat-fee paid plan for custom domains (as of 2026).",
       },
       {
         q: "When is OneTimeSecret the better choice?",
@@ -342,24 +342,24 @@ export const ALTERNATIVES = [
     name: "1Password",
     title: "1Password Alternative for .env Files & Developer Secrets (2026)",
     metaDescription:
-      "1Password is great for passwords — but .env files aren't passwords. JustEnvs is the Mac-native vault built for environment variables. Keep both: $50 one-time, free for solo devs.",
+      "1Password is great for passwords — but .env files aren't passwords. JustEnvs is the Mac-native vault built for environment variables. Keep both: $20 one-time, free for solo devs.",
     tagline:
       "1Password is the gold standard for passwords, passkeys, and family logins. JustEnvs isn't trying to replace it — it's the tool for the thing 1Password treats as an afterthought: your .env files.",
     segment: "Password manager (consumer & business), subscription per-user",
     pricing: {
       competitor: "No free tier; individual and per-user team/business subscriptions",
-      justenvs: "Free for solo devs (5 projects) · $50 one-time for Pro, lifetime",
+      justenvs: "Free for solo devs (5 projects) · $20 one-time for Pro, lifetime",
     },
     intro: [
       "Let's be clear up front: if you're looking to replace 1Password for passwords, logins, and passkeys — keep 1Password. It's excellent at that job, the browser extension is everywhere, and your family vault isn't going to migrate itself.",
       "The search for a \"1Password alternative\" among developers usually means something narrower: 1Password is where your team said to put the API keys, and it's awkward there. Secrets end up as secure notes — unstructured walls of text — or as one-field-per-key entries nobody maintains. There's a developer offering (Secrets Automation, service accounts), but it's bolted onto a password manager's data model and a per-user subscription you pay forever.",
-      "JustEnvs is what that workflow looks like when .env files are the headline instead of the footnote. Variables are first-class: organized by project, encrypted locally on your Mac, copied back out as valid .env with one click, and shareable through self-destructing links instead of \"I added you to the shared vault\". It costs $50 once — or nothing, if you're a solo dev.",
+      "JustEnvs is what that workflow looks like when .env files are the headline instead of the footnote. Variables are first-class: organized by project, encrypted locally on your Mac, copied back out as valid .env with one click, and shareable through self-destructing links instead of \"I added you to the shared vault\". It costs $20 once — or nothing, if you're a solo dev.",
     ],
     compareRows: [
       { feature: "Built for", justenvs: ".env files and project secrets", competitor: "Passwords, passkeys, logins" },
       { feature: ".env structure preserved", justenvs: "Yes — key/value rows per project", competitor: "No — secure notes or one-off fields" },
       { feature: "One-time secret links", justenvs: "Yes — burn after reading", competitor: "Item sharing with expiry (account-centric)" },
-      { feature: "Pricing", justenvs: "$50 one-time, free for solo devs", competitor: "Subscription per user, no free tier" },
+      { feature: "Pricing", justenvs: "$20 one-time, free for solo devs", competitor: "Subscription per user, no free tier" },
       { feature: "Browser extension / autofill", justenvs: "No — not a password manager", competitor: "Yes, best in class" },
       { feature: "Platform", justenvs: "Native macOS app", competitor: "All platforms" },
     ],
@@ -388,7 +388,7 @@ export const ALTERNATIVES = [
       },
       {
         title: "One-time price",
-        body: "1Password is a subscription forever, per user. JustEnvs Pro is $50 once — and free if you're a solo dev with up to 5 projects.",
+        body: "1Password is a subscription forever, per user. JustEnvs Pro is $20 once — and free if you're a solo dev with up to 5 projects.",
       },
       {
         title: "Purpose-built simplicity",
@@ -406,7 +406,7 @@ export const ALTERNATIVES = [
       },
       {
         q: "Is JustEnvs cheaper than 1Password?",
-        a: "Over time, yes. 1Password is a recurring per-user subscription with no free tier (as of 2026). JustEnvs is free for solo developers and $50 one-time for Pro — there is no recurring cost.",
+        a: "Over time, yes. 1Password is a recurring per-user subscription with no free tier (as of 2026). JustEnvs is free for solo developers and $20 one-time for Pro — there is no recurring cost.",
       },
       {
         q: "Does JustEnvs have a browser extension or autofill?",
