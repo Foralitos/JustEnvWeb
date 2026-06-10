@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Icon, Button, Brand, GridBG, BrandMark, Overline } from "@/components/landing/lib";
 import ThemeToggle from "@/components/landing/ThemeToggle";
 import Footer from "@/components/landing/Footer";
@@ -562,7 +563,7 @@ export default function ShareLanding({ faqs }) {
                   className="ds-display-xl"
                   style={{ margin: "14px 0 0", fontSize: "clamp(34px, 5.6vw, 56px)" }}
                 >
-                  Secrets that{" "}
+                  One-time secrets that{" "}
                   <span style={{ fontStyle: "italic", color: "var(--accent)" }}>
                     delete themselves
                   </span>
@@ -707,7 +708,11 @@ export default function ShareLanding({ faqs }) {
               </h2>
               <p className="ds-body" style={{ color: "var(--fg-secondary)", margin: "18px 0 0", maxWidth: 420 }}>
                 Most &ldquo;secret sharing&rdquo; tools ask you to paste your secrets into a
-                web page. JustEnvs never sees plaintext: encryption happens on
+                web page —{" "}
+                <Link href="/alternatives/onetimesecret" style={{ color: "var(--accent)" }}>
+                  OneTimeSecret
+                </Link>{" "}
+                included. JustEnvs never sees plaintext: encryption happens on
                 your Mac, decryption in the recipient&apos;s browser. Read the full{" "}
                 <a href="/security" style={{ color: "var(--accent)" }}>
                   security model

@@ -80,8 +80,8 @@ const Footer = () => {
                     Support
                   </a>
                 )}
-                <Link href="/share" className="no-underline hover:underline">
-                  Share
+                <Link href="/one-time-secret" className="no-underline hover:underline">
+                  One-Time Secret
                 </Link>
                 <Link href="/security" className="no-underline hover:underline">
                   Security

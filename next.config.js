@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      // SEO: /share moved to /one-time-secret (2026-06-10). permanent:true
+      // emits a 308, which Google treats the same as a 301.
+      {
+        source: "/share",
+        destination: "/one-time-secret",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       // NextJS <Image> component needs to whitelist domains for src={}

@@ -64,6 +64,32 @@ export const getSEOTags = ({
   };
 };
 
+// FAQPage JSON-LD string from an array of {q, a}. Render inside a
+// <script type="application/ld+json"> in the page's server component.
+export const faqJsonLd = (faqs) =>
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  });
+
+// BreadcrumbList JSON-LD string from an array of {name, urlRelative}.
+export const breadcrumbJsonLd = (items) =>
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `https://${config.domainName}${item.urlRelative}`,
+    })),
+  });
+
 // Strctured Data for Rich Results on Google. Learn more: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
 // Find your type here (SoftwareApp, Book...): https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 // Use this tool to check data is well structure: https://search.google.com/test/rich-results
